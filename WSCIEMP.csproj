@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319.1</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BABD2A2F-03A0-4FDE-B6C0-4CEDC96E4CAA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WSCIEMP</RootNamespace>
+    <AssemblyName>WSCIEMP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\PassthroughManagement.aspx" />
+    <Content Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx" />
+    <Content Include="Reports\HReports\BeetPaymentBreakdown.aspx" />
+    <Content Include="Reports\MReports\NoticeOfPassthrough.aspx" />
+    <Content Include="SHS\SeedVariety.aspx" />
+    <Content Include="BeetAccounting\AccountingFileMtn\DirectDelivery.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Reports\MReports\DailyGrowerTareDetail.aspx" />
+    <Content Include="Reports\MReports\DirectDeliveryDetails.aspx" />
+    <Content Include="Reports\MReports\DirectDeliveryPaymentExport.aspx" />
+    <Content Include="Reports\MReports\DirectDeliveryStatement.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\PassthroughManagement.aspx.cs">
+      <DependentUpon>PassthroughManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PassthroughManagement.aspx.designer.cs">
+      <DependentUpon>PassthroughManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WSCReports\rptBeetPaymentBreakdown.cs" />
+    <Compile Include="App_Code\WSCReports\rptNoticeOfPassthrough.cs" />
+    <Compile Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx.cs">
+      <DependentUpon>BeetExcessPaymentStation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx.designer.cs">
+      <DependentUpon>BeetExcessPaymentStation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\BeetPaymentBreakdown.aspx.cs">
+      <DependentUpon>BeetPaymentBreakdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\BeetPaymentBreakdown.aspx.designer.cs">
+      <DependentUpon>BeetPaymentBreakdown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\NoticeOfPassthrough.aspx.cs">
+      <DependentUpon>NoticeOfPassthrough.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\NoticeOfPassthrough.aspx.designer.cs">
+      <DependentUpon>NoticeOfPassthrough.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\SeedVariety.aspx.cs">
+      <DependentUpon>SeedVariety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\SeedVariety.aspx.designer.cs">
+      <DependentUpon>SeedVariety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WSCData\BeetDirectDelivery.cs" />
+    <Compile Include="App_Code\WSCReports\rptDailyGrowerTareDetailMaster.cs" />
+    <Compile Include="App_Code\WSCReports\rptDirectDelivery.cs" />
+    <Compile Include="BeetAccounting\AccountingFileMtn\DirectDelivery.aspx.cs">
+      <DependentUpon>DirectDelivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\AccountingFileMtn\DirectDelivery.aspx.designer.cs">
+      <DependentUpon>DirectDelivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCFieldData.cs" />
+    <Compile Include="App_Code\WSCData\WSCShsData.cs" />
+    <Compile Include="App_Code\WSCData\WSCMember.cs" />
+    <Compile Include="App_Code\WSCData\WSCSecurity.cs" />
+    <Compile Include="App_Code\PdfHelper\Xml2PDF.cs" />
+    <Compile Include="Common\UILib.cs" />
+    <Compile Include="App_Code\WSCData\Globals.cs" />
+    <Compile Include="App_Code\PdfHelper\PdfReports.cs" />
+    <Compile Include="App_Code\WSCData\MDAAB.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalException.aspx.cs">
+      <DependentUpon>GlobalException.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GlobalException.aspx.designer.cs">
+      <DependentUpon>GlobalException.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoNavTemplate.Master.cs">
+      <DependentUpon>NoNavTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoNavTemplate.Master.designer.cs">
+      <DependentUpon>NoNavTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrimaryTemplate.Master.cs">
+      <DependentUpon>PrimaryTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimaryTemplate.Master.designer.cs">
+      <DependentUpon>PrimaryTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\MReports\DailyGrowerTareDetail.aspx.cs">
+      <DependentUpon>DailyGrowerTareDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\DailyGrowerTareDetail.aspx.designer.cs">
+      <DependentUpon>DailyGrowerTareDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\DirectDeliveryDetails.aspx.cs">
+      <DependentUpon>DirectDeliveryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\DirectDeliveryDetails.aspx.designer.cs">
+      <DependentUpon>DirectDeliveryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\DirectDeliveryPaymentExport.aspx.cs">
+      <DependentUpon>DirectDeliveryPaymentExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\DirectDeliveryPaymentExport.aspx.designer.cs">
+      <DependentUpon>DirectDeliveryPaymentExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\DirectDeliveryStatement.aspx.cs">
+      <DependentUpon>DirectDeliveryStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\DirectDeliveryStatement.aspx.designer.cs">
+      <DependentUpon>DirectDeliveryStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\ShsHome.aspx.cs">
+      <DependentUpon>ShsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\ShsHome.aspx.designer.cs">
+      <DependentUpon>ShsHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderRepair.aspx.cs">
+      <DependentUpon>UnderRepair.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderRepair.aspx.designer.cs">
+      <DependentUpon>UnderRepair.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NoNavTemplate.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PrimaryTemplate.Master" />
+    <Content Include="UnderRepair.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\NoNavigation\Controls.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminMain.aspx" />
+    <Content Include="Admin\BankFinder.aspx" />
+    <Content Include="Admin\BankMaintenance.aspx" />
+    <Content Include="Admin\BankPayeeMaintenance.aspx" />
+    <Content Include="Admin\DeductionImport.aspx" />
+    <Content Include="Admin\ExportPerformance.aspx" />
+    <Content Include="Admin\ManageLookups.aspx" />
+    <Content Include="BeetAccounting\PaymentProcessing\PaymentDescription.aspx" />
+    <Content Include="Admin\PlantPopulation.aspx" />
+    <Content Include="Admin\Security.aspx" />
+    <Content Include="Admin\SendFile.aspx" />
+    <Content Include="Admin\UserFinder.aspx" />
+    <Content Include="Admin\UserMaintenance.aspx" />
+    <Content Include="App_Themes\NoNavigation\Default.css" />
+    <Content Include="App_Themes\ThemeA_1024\AdRotateMain.xml" />
+    <Content Include="App_Themes\ThemeA_1024\Controls.skin" />
+    <Content Include="App_Themes\ThemeA_1024\Default.css" />
+    <Compile Include="Admin\AdminMain.aspx.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMain.aspx.designer.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AppErrors.aspx.cs">
+      <DependentUpon>AppErrors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AppErrors.aspx.designer.cs">
+      <DependentUpon>AppErrors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BankFinder.aspx.cs">
+      <DependentUpon>BankFinder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BankFinder.aspx.designer.cs">
+      <DependentUpon>BankFinder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BankMaintenance.aspx.cs">
+      <DependentUpon>BankMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BankMaintenance.aspx.designer.cs">
+      <DependentUpon>BankMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BankPayeeMaintenance.aspx.cs">
+      <DependentUpon>BankPayeeMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BankPayeeMaintenance.aspx.designer.cs">
+      <DependentUpon>BankPayeeMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeductionImport.aspx.cs">
+      <DependentUpon>DeductionImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeductionImport.aspx.designer.cs">
+      <DependentUpon>DeductionImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ExportPerformance.aspx.cs">
+      <DependentUpon>ExportPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExportPerformance.aspx.designer.cs">
+      <DependentUpon>ExportPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageLookups.aspx.cs">
+      <DependentUpon>ManageLookups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageLookups.aspx.designer.cs">
+      <DependentUpon>ManageLookups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WSCData\AppError.cs" />
+    <Compile Include="App_Code\WSCData\BeetDataDomain.cs" />
+    <Compile Include="App_Code\WSCData\BeetDataMember.cs" />
+    <Compile Include="App_Code\WSCData\BeetEquityDeduction.cs" />
+    <Compile Include="App_Code\WSCData\List1099ExportItem.cs" />
+    <Compile Include="App_Code\WSCData\ListAppErrorItem.cs" />
+    <Compile Include="App_Code\WSCData\BeetDataAddress.cs" />
+    <Compile Include="App_Code\WSCData\BeetDataOverPlant.cs" />
+    <Compile Include="App_Code\WSCData\ListAddressItem.cs" />
+    <Compile Include="App_Code\WSCData\ListBeetContractIDItem.cs" />
+    <Compile Include="App_Code\WSCData\ListBeetFactoryIDItem.cs" />
+    <Compile Include="App_Code\WSCData\ListBeetFactoryNameItem.cs" />
+    <Compile Include="App_Code\WSCData\ListBeetFieldFinderItem.cs" />
+    <Compile Include="App_Code\WSCData\ListBeetStationIDItem.cs" />
+    <Compile Include="App_Code\WSCData\ListDeliveryDateItem.cs" />
+    <Compile Include="App_Code\WSCData\ListEquityDeductionItem.cs" />
+    <Compile Include="App_Code\WSCData\ListEquityPaymentScheduleItem.cs" />
+    <Compile Include="App_Code\WSCData\ListMemberEquityDeductionItem.cs" />
+    <Compile Include="App_Code\WSCData\ListMemberEquityPaymentItem.cs" />
+    <Compile Include="App_Code\WSCData\ListMemberStockSummaryItem.cs" />
+    <Compile Include="App_Code\WSCData\ListOverPlantFactoryItem.cs" />
+    <Compile Include="App_Code\WSCData\ListOverPlantMemberItem.cs" />
+    <Compile Include="App_Code\WSCData\ListShareTransferItem.cs" />
+    <Compile Include="App_Code\WSCData\ListStatementPatRetainItem.cs" />
+    <Compile Include="App_Code\WSCReports\rptBeet1099.cs" />
+    <Compile Include="App_Code\WSCReports\rptCertificate.cs" />
+    <Compile Include="App_Code\WSCReports\rptStatementPatronageRetain.cs" />
+    <Compile Include="BeetAccounting\AgFieldMtn\TempTransfer.aspx.cs">
+      <DependentUpon>TempTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\AgFieldMtn\TempTransfer.aspx.designer.cs">
+      <DependentUpon>TempTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\CalculatePayment.aspx.cs">
+      <DependentUpon>CalculatePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\CalculatePayment.aspx.designer.cs">
+      <DependentUpon>CalculatePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\ExportPaymentData.aspx.cs">
+      <DependentUpon>ExportPaymentData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\ExportPaymentData.aspx.designer.cs">
+      <DependentUpon>ExportPaymentData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\PaymentDescription.aspx.cs">
+      <DependentUpon>PaymentDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\PaymentDescription.aspx.designer.cs">
+      <DependentUpon>PaymentDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PlantPopulation.aspx.cs">
+      <DependentUpon>PlantPopulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PlantPopulation.aspx.designer.cs">
+      <DependentUpon>PlantPopulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendFile.aspx.cs">
+      <DependentUpon>SendFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendFile.aspx.designer.cs">
+      <DependentUpon>SendFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserFinder.aspx.cs">
+      <DependentUpon>UserFinder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserFinder.aspx.designer.cs">
+      <DependentUpon>UserFinder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserMaintenance.aspx.cs">
+      <DependentUpon>UserMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserMaintenance.aspx.designer.cs">
+      <DependentUpon>UserMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WSCData\LimsEx.cs" />
+    <Compile Include="App_Code\WSCData\ListIMSFactoryItem.cs" />
+    <Compile Include="App_Code\WSCData\RehaulFactoryStationData.cs" />
+    <Compile Include="App_Code\WSCReports\rptContractDeliverySummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptContractSummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptDailyGrowerTareDetail.cs" />
+    <Compile Include="App_Code\WSCReports\rptDeliveryByDaySummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptContractCards.cs" />
+    <Compile Include="App_Code\WSCReports\rptContractPayeeSummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptEquityPayment.cs" />
+    <Compile Include="App_Code\WSCReports\rptEquityStatement.cs" />
+    <Compile Include="App_Code\WSCReports\rptFieldAgronomy.cs" />
+    <Compile Include="App_Code\WSCData\Domain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCReportsExec.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\RptAgronomy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCAdmin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCBank.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCEmployee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCFieldExport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCData\WSCPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\WSCReports\rptGroTransmittal.cs" />
+    <Compile Include="App_Code\WSCReports\rptTonsByTruckByContract.cs" />
+    <Compile Include="App_Code\WSCReports\rptShareholderSummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptFieldContracting.cs" />
+    <Compile Include="App_Code\WSCReports\rptFieldSummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptLandownerLetter.cs" />
+    <Compile Include="App_Code\WSCReports\rptPaymentSummary.cs" />
+    <Compile Include="App_Code\WSCReports\rptTransmittal.cs" />
+    <Compile Include="BeetAccounting\AccountingFileMtn\AccountingFileMtnHome.aspx.cs">
+      <DependentUpon>AccountingFileMtnHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\AccountingFileMtn\AccountingFileMtnHome.aspx.designer.cs">
+      <DependentUpon>AccountingFileMtnHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\AgFieldMtn\AgFieldMtnHome.aspx.cs">
+      <DependentUpon>AgFieldMtnHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\AgFieldMtn\AgFieldMtnHome.aspx.designer.cs">
+      <DependentUpon>AgFieldMtnHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\BeetAccountingHome.aspx.cs">
+      <DependentUpon>BeetAccountingHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\BeetAccountingHome.aspx.designer.cs">
+      <DependentUpon>BeetAccountingHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\HarvestProcessing\HarvestProcessingHome.aspx.cs">
+      <DependentUpon>HarvestProcessingHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\HarvestProcessing\HarvestProcessingHome.aspx.designer.cs">
+      <DependentUpon>HarvestProcessingHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\PaymentProcessingHome.aspx.cs">
+      <DependentUpon>PaymentProcessingHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\PaymentProcessing\PaymentProcessingHome.aspx.designer.cs">
+      <DependentUpon>PaymentProcessingHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\CoopEquityDeduction.aspx.cs">
+      <DependentUpon>CoopEquityDeduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\CoopEquityDeduction.aspx.designer.cs">
+      <DependentUpon>CoopEquityDeduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\CoopSettings.aspx.cs">
+      <DependentUpon>CoopSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\CoopSettings.aspx.designer.cs">
+      <DependentUpon>CoopSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\MemberEquityDeduction.aspx.cs">
+      <DependentUpon>MemberEquityDeduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\MemberEquityDeduction.aspx.designer.cs">
+      <DependentUpon>MemberEquityDeduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\OverPlantMember.aspx.cs">
+      <DependentUpon>OverPlantMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\OverPlantMember.aspx.designer.cs">
+      <DependentUpon>OverPlantMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\ShareholderServicesHome.aspx.cs">
+      <DependentUpon>ShareholderServicesHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeetAccounting\ShareholderServices\ShareholderServicesHome.aspx.designer.cs">
+      <DependentUpon>ShareholderServicesHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AppHelper.cs" />
+    <Compile Include="Common\ErrorHelper.cs" />
+    <Compile Include="Common\CodeLib.cs" />
+    <Compile Include="Fields\BeetAcctConnect.aspx.cs">
+      <DependentUpon>BeetAcctConnect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\BeetAcctConnect.aspx.designer.cs">
+      <DependentUpon>BeetAcctConnect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\FieldAgronomy.aspx.cs">
+      <DependentUpon>FieldAgronomy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\FieldAgronomy.aspx.designer.cs">
+      <DependentUpon>FieldAgronomy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\FieldContracting.aspx.cs">
+      <DependentUpon>FieldContracting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\FieldContracting.aspx.designer.cs">
+      <DependentUpon>FieldContracting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\FieldDescFinder.aspx.cs">
+      <DependentUpon>FieldDescFinder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\FieldDescFinder.aspx.designer.cs">
+      <DependentUpon>FieldDescFinder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\FieldHome.aspx.cs">
+      <DependentUpon>FieldHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\FieldHome.aspx.designer.cs">
+      <DependentUpon>FieldHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\FieldInfo.aspx.cs">
+      <DependentUpon>FieldInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\FieldInfo.aspx.designer.cs">
+      <DependentUpon>FieldInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\ShareholderSummary.aspx.cs">
+      <DependentUpon>ShareholderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\ShareholderSummary.aspx.designer.cs">
+      <DependentUpon>ShareholderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\SoilLab.aspx.cs">
+      <DependentUpon>SoilLab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fields\SoilLab.aspx.designer.cs">
+      <DependentUpon>SoilLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HarvestReportTemplate.Master.cs">
+      <DependentUpon>HarvestReportTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HarvestReportTemplate.Master.designer.cs">
+      <DependentUpon>HarvestReportTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\ContractDeliverySummary.aspx.cs">
+      <DependentUpon>ContractDeliverySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\ContractDeliverySummary.aspx.designer.cs">
+      <DependentUpon>ContractDeliverySummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\ContractPayeeSummary.aspx.cs">
+      <DependentUpon>ContractPayeeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\ContractPayeeSummary.aspx.designer.cs">
+      <DependentUpon>ContractPayeeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\ContractSummary.aspx.cs">
+      <DependentUpon>ContractSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\ContractSummary.aspx.designer.cs">
+      <DependentUpon>ContractSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\DailyGrowerTareDetail.aspx.cs">
+      <DependentUpon>DailyGrowerTareDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\DailyGrowerTareDetail.aspx.designer.cs">
+      <DependentUpon>DailyGrowerTareDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\DeliveryByDaySummary.aspx.cs">
+      <DependentUpon>DeliveryByDaySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\DeliveryByDaySummary.aspx.designer.cs">
+      <DependentUpon>DeliveryByDaySummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\EquityStatement.aspx.cs">
+      <DependentUpon>EquityStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\EquityStatement.aspx.designer.cs">
+      <DependentUpon>EquityStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\FieldSummary.aspx.cs">
+      <DependentUpon>FieldSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\FieldSummary.aspx.designer.cs">
+      <DependentUpon>FieldSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\GroTransmittal.aspx.cs">
+      <DependentUpon>GroTransmittal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\GroTransmittal.aspx.designer.cs">
+      <DependentUpon>GroTransmittal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\HarvestReports.aspx.cs">
+      <DependentUpon>HarvestReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\HarvestReports.aspx.designer.cs">
+      <DependentUpon>HarvestReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterReportTemplate.Master.cs">
+      <DependentUpon>MasterReportTemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterReportTemplate.Master.designer.cs">
+      <DependentUpon>MasterReportTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HReports\TonsByTruckByContract.aspx.cs">
+      <DependentUpon>TonsByTruckByContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HReports\TonsByTruckByContract.aspx.designer.cs">
+      <DependentUpon>TonsByTruckByContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\Beet1099.aspx.cs">
+      <DependentUpon>Beet1099.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\Beet1099.aspx.designer.cs">
+      <DependentUpon>Beet1099.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\Certificate.aspx.cs">
+      <DependentUpon>Certificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\Certificate.aspx.designer.cs">
+      <DependentUpon>Certificate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\ContractCards.aspx.cs">
+      <DependentUpon>ContractCards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\ContractCards.aspx.designer.cs">
+      <DependentUpon>ContractCards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\ContractPayeeSummary.aspx.cs">
+      <DependentUpon>ContractPayeeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\ContractPayeeSummary.aspx.designer.cs">
+      <DependentUpon>ContractPayeeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\EquityPayment.aspx.cs">
+      <DependentUpon>EquityPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\EquityPayment.aspx.designer.cs">
+      <DependentUpon>EquityPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\EquityStatement.aspx.cs">
+      <DependentUpon>EquityStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\EquityStatement.aspx.designer.cs">
+      <DependentUpon>EquityStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\FieldAgronomy.aspx.cs">
+      <DependentUpon>FieldAgronomy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\FieldAgronomy.aspx.designer.cs">
+      <DependentUpon>FieldAgronomy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\FieldContracting.aspx.cs">
+      <DependentUpon>FieldContracting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\FieldContracting.aspx.designer.cs">
+      <DependentUpon>FieldContracting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\FieldSummary.aspx.cs">
+      <DependentUpon>FieldSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\FieldSummary.aspx.designer.cs">
+      <DependentUpon>FieldSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\LandownerLetter.aspx.cs">
+      <DependentUpon>LandownerLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\LandownerLetter.aspx.designer.cs">
+      <DependentUpon>LandownerLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\MasterReports.aspx.cs">
+      <DependentUpon>MasterReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\MasterReports.aspx.designer.cs">
+      <DependentUpon>MasterReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\PaymentSummary.aspx.cs">
+      <DependentUpon>PaymentSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\PaymentSummary.aspx.designer.cs">
+      <DependentUpon>PaymentSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\ShareholderSummary.aspx.cs">
+      <DependentUpon>ShareholderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\ShareholderSummary.aspx.designer.cs">
+      <DependentUpon>ShareholderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\StatementPatronageUnitRetain.aspx.cs">
+      <DependentUpon>StatementPatronageUnitRetain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\StatementPatronageUnitRetain.aspx.designer.cs">
+      <DependentUpon>StatementPatronageUnitRetain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\TempTransfer.aspx.cs">
+      <DependentUpon>TempTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\TempTransfer.aspx.designer.cs">
+      <DependentUpon>TempTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MReports\Transmittal.aspx.cs">
+      <DependentUpon>Transmittal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MReports\Transmittal.aspx.designer.cs">
+      <DependentUpon>Transmittal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GrowerBooks.aspx.cs">
+      <DependentUpon>GrowerBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\GrowerBooks.aspx.designer.cs">
+      <DependentUpon>GrowerBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportsHome.aspx.cs">
+      <DependentUpon>ReportsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportsHome.aspx.designer.cs">
+      <DependentUpon>ReportsHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\University.aspx.cs">
+      <DependentUpon>University.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\University.aspx.designer.cs">
+      <DependentUpon>University.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\AlertForms.aspx.cs">
+      <DependentUpon>AlertForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\AlertForms.aspx.designer.cs">
+      <DependentUpon>AlertForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\PaymentCalculator.aspx.cs">
+      <DependentUpon>PaymentCalculator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\PaymentCalculator.aspx.designer.cs">
+      <DependentUpon>PaymentCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\AlertAnnouncements.aspx.cs">
+      <DependentUpon>AlertAnnouncements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\AlertAnnouncements.aspx.designer.cs">
+      <DependentUpon>AlertAnnouncements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\AlertNews.aspx.cs">
+      <DependentUpon>AlertNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\AlertNews.aspx.designer.cs">
+      <DependentUpon>AlertNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\optChangePswd.aspx.cs">
+      <DependentUpon>optChangePswd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\optChangePswd.aspx.designer.cs">
+      <DependentUpon>optChangePswd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\optContactInfo.aspx.cs">
+      <DependentUpon>optContactInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\optContactInfo.aspx.designer.cs">
+      <DependentUpon>optContactInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\optRecDailyHarvestRpt.aspx.cs">
+      <DependentUpon>optRecDailyHarvestRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\optRecDailyHarvestRpt.aspx.designer.cs">
+      <DependentUpon>optRecDailyHarvestRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\Rehaul\RehaulEntry.aspx.cs">
+      <DependentUpon>RehaulEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\Rehaul\RehaulEntry.aspx.designer.cs">
+      <DependentUpon>RehaulEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\Rehaul\RehaulViewer.aspx.cs">
+      <DependentUpon>RehaulViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\Rehaul\RehaulViewer.aspx.designer.cs">
+      <DependentUpon>RehaulViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHS\VDecisionTree.aspx.cs">
+      <DependentUpon>VDecisionTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHS\VDecisionTree.aspx.designer.cs">
+      <DependentUpon>VDecisionTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UControls\TextEntry.aspx.cs">
+      <DependentUpon>TextEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControls\TextEntry.aspx.designer.cs">
+      <DependentUpon>TextEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UControls\UserContractSelector.ascx.cs">
+      <DependentUpon>UserContractSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControls\UserContractSelector.ascx.designer.cs">
+      <DependentUpon>UserContractSelector.ascx</DependentUpon>
+    </Compile>
+    <Content Include="Fields\BeetAcctConnect.aspx" />
+    <Content Include="Fields\FieldAgronomy.aspx" />
+    <Content Include="Fields\FieldDescFinder.aspx" />
+    <Content Include="Fields\ShareholderSummary.aspx" />
+    <Content Include="Fields\SoilLab.aspx" />
+    <Content Include="GlobalException.aspx" />
+    <Content Include="Fields\FieldContracting.aspx" />
+    <Content Include="Fields\FieldInfo.aspx" />
+    <Content Include="Reports\GrowerBooks.aspx" />
+    <Content Include="Reports\University.aspx" />
+    <Content Include="SHS\PaymentCalculator.aspx" />
+    <Content Include="UControls\TextEntry.aspx" />
+    <Content Include="UControls\UserContractSelector.ascx" />
+    <Content Include="Script\Common.js" />
+    <Content Include="SHS\AlertAnnouncements.aspx" />
+    <Content Include="SHS\AlertNews.aspx" />
+    <Content Include="SHS\optChangePswd.aspx" />
+    <Content Include="SHS\optContactInfo.aspx" />
+    <Content Include="SHS\optRecDailyHarvestRpt.aspx" />
+    <Content Include="SHS\ShsHome.aspx" />
+    <Content Include="SHS\VDecisionTree.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\FieldHome.aspx" />
+    <Content Include="Reports\ReportsHome.aspx" />
+    <Content Include="SHS\AlertForms.aspx" />
+    <Content Include="SHS\Rehaul\RehaulEntry.aspx" />
+    <Content Include="SHS\Rehaul\RehaulViewer.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\PaymentProcessing\CalculatePayment.aspx" />
+    <Content Include="BeetAccounting\PaymentProcessing\ExportPaymentData.aspx" />
+    <Content Include="SHS\Rehaul\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\AccountingFileMtn\AccountingFileMtnHome.aspx" />
+    <Content Include="BeetAccounting\AgFieldMtn\AgFieldMtnHome.aspx" />
+    <Content Include="BeetAccounting\BeetAccountingHome.aspx" />
+    <Content Include="BeetAccounting\HarvestProcessing\HarvestProcessingHome.aspx" />
+    <Content Include="BeetAccounting\ShareholderServices\ShareholderServicesHome.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\HarvestProcessing\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AppErrors.aspx" />
+    <Content Include="BeetAccounting\AgFieldMtn\TempTransfer.aspx" />
+    <Content Include="BeetAccounting\PaymentProcessing\PaymentProcessingHome.aspx" />
+    <Content Include="BeetAccounting\ShareholderServices\CoopEquityDeduction.aspx" />
+    <Content Include="BeetAccounting\ShareholderServices\CoopSettings.aspx" />
+    <Content Include="BeetAccounting\ShareholderServices\MemberEquityDeduction.aspx" />
+    <Content Include="BeetAccounting\ShareholderServices\OverPlantMember.aspx" />
+    <Content Include="img\button-login.jpg" />
+    <Content Include="img\Cal2.gif" />
+    <Content Include="img\calendar.gif" />
+    <Content Include="img\DescFooter.gif" />
+    <Content Include="img\folders\lm.gif" />
+    <Content Include="img\folders\lmh.gif" />
+    <Content Include="img\folders\ln.gif" />
+    <Content Include="img\folders\loading.gif" />
+    <Content Include="img\folders\lp.gif" />
+    <Content Include="img\folders\lph.gif" />
+    <Content Include="img\folders\tm.gif" />
+    <Content Include="img\folders\tmh.gif" />
+    <Content Include="img\folders\tn.gif" />
+    <Content Include="img\folders\tp.gif" />
+    <Content Include="img\folders\tph.gif" />
+    <Content Include="img\folders\vline.gif" />
+    <Content Include="img\Logo2.jpg" />
+    <Content Include="img\NextGreen.gif" />
+    <Content Include="img\PrevGreen.gif" />
+    <Content Include="img\WSCLogo1.jpg" />
+    <Content Include="Script\MyJQuery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterReportTemplate.Master" />
+    <Content Include="Reports\MReports\StatementPatronageUnitRetain.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\HReports\ContractDeliverySummary.aspx" />
+    <Content Include="Reports\HReports\ContractSummary.aspx" />
+    <Content Include="Reports\HReports\DailyGrowerTareDetail.aspx" />
+    <Content Include="Reports\HReports\DeliveryByDaySummary.aspx" />
+    <Content Include="Reports\HReports\GroTransmittal.aspx" />
+    <Content Include="Reports\HReports\HarvestReports.aspx" />
+    <Content Include="Reports\HReports\TonsByTruckByContract.aspx" />
+    <Content Include="Reports\MReports\ContractCards.aspx" />
+    <Content Include="Reports\MReports\ContractPayeeSummary.aspx" />
+    <Content Include="Reports\MReports\EquityPayment.aspx" />
+    <Content Include="Reports\MReports\EquityStatement.aspx" />
+    <Content Include="Reports\MReports\FieldAgronomy.aspx" />
+    <Content Include="Reports\MReports\FieldContracting.aspx" />
+    <Content Include="Reports\MReports\FieldSummary.aspx" />
+    <Content Include="Reports\MReports\LandownerLetter.aspx" />
+    <Content Include="Reports\MReports\MasterReports.aspx" />
+    <Content Include="Reports\MReports\PaymentSummary.aspx" />
+    <Content Include="Reports\MReports\ShareholderSummary.aspx" />
+    <Content Include="Reports\MReports\TempTransfer.aspx" />
+    <Content Include="Reports\MReports\Transmittal.aspx" />
+    <Content Include="Reports\MReports\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\HReports\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HarvestReportTemplate.Master" />
+    <Content Include="Reports\MReports\Beet1099.aspx" />
+    <Content Include="Reports\MReports\Certificate.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fields\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\HReports\ContractPayeeSummary.aspx" />
+    <Content Include="Reports\HReports\EquityStatement.aspx" />
+    <Content Include="Reports\HReports\FieldSummary.aspx" />
+    <Content Include="SHS\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\NoNavigation\images\" />
+    <Folder Include="App_Themes\ThemeA_1024\images\" />
+    <Folder Include="PDF\" />
+    <Folder Include="ZHost\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\AccountingFileMtn\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\AgFieldMtn\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\PaymentProcessing\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeetAccounting\ShareholderServices\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\AppSettings_DevWSC.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\AppSettings_Production.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Connection.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Connection_DevWSC.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Connection_Production.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2575</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/WSCIEMP</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,10 @@
+D:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.dll
+D:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.pdb
+D:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.dll
+D:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.pdb
+C:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.dll
+C:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.pdb
+C:\VssWrk\Western\WSCIEMP\obj\Release\ResolveAssemblyReference.cache
+C:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.dll
+C:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.pdb
+D:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.csprojResolveAssemblyReference.cache

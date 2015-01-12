@@ -1,0 +1,60 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+
+<asp:SiteMapPath runat="server">
+    <PathSeparatorTemplate>    
+       <asp:Image runat="server" ImageUrl="images/sepwhite.gif" hspace="4" align="middle" />
+    </PathSeparatorTemplate>
+</asp:SiteMapPath>
+
+<SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+
+--%>
+<asp:GridView SkinID="grdColor" runat="server" CellPadding="2" ForeColor="#333333" GridLines="Vertical">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />   
+   <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFFF66" ForeColor="Navy" />
+   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" BorderColor="#404040" />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+<asp:GridView SkinID="grdColorNoHead" runat="server" ShowHeader="false" CellPadding="2" ForeColor="#333333" GridLines="Vertical">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />   
+   <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFFF66" ForeColor="Navy" />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+<asp:GridView SkinID="grdColorWhite" runat="server" CellPadding="2" ForeColor="#333333" GridLines="Vertical">
+   <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />   
+   <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+   <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+   <SelectedRowStyle BackColor="#FFFF66" ForeColor="Navy" />
+   <HeaderStyle BackColor="#E1E1A8" Font-Bold="True" ForeColor="#000000" HorizontalAlign="Center" BorderColor="#FAFEFB" />
+   <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+<asp:AdRotator SkinID="adrPrimary"  runat="server" height="61" Width="970" Target="_self" AdvertisementFile="~/App_themes/ThemeA_1024/AdRotateMain.xml" />
+<asp:Menu SkinID="bodyMenu" runat="server" 
+    StaticHoverStyle-Font-Underline="true" 
+    StaticMenuItemStyle-Font-Underline="true" 
+    Orientation="Vertical" 
+    SkipLinkText="" 
+    StaticDisplayLevels="2" 
+    MaximumDynamicDisplayLevels="0" 
+    StaticEnableDefaultPopOutImage="false" />
+
+
+
+

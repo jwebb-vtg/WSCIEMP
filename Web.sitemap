@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+	<siteMapNode roles="*">
+		<siteMapNode url="~/Admin/AdminMain.aspx" title="Ag Admin" description=""
+					 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager">
+			<siteMapNode url="~/Admin/AppErrors.aspx" title="Application Errors" description="Application errors recorded in BeetAccounting database" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/BankMaintenance.aspx" title="Bank Maintenance" description="Create new, update or delete Bank names and Bank contact information." 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/BankPayeeMaintenance.aspx" title="Bank-Payee" description="Associate Payees to Banks and set liens and releases."
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/Admin/DeductionImport.aspx" title="Deduction Import" description="Import deductions in bulk from an Excel spreadsheet" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/ManageLookups.aspx" title="Lookup Maintenance" description="Create new, update or delete Lookup values used in drop-down controls." 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/PassthroughManagement.aspx" title="Passthrough Management" description="Manage coop passthrough values for calendar year."
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />			
+			<siteMapNode url="~/Admin/ExportPerformance.aspx" title="Performance Export" description="Export performance data to the MSAccess database used by ArcView application." 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/PlantPopulation.aspx" title="Plant Population" description="Manage Plant Population row width, BPA Factor, and Stand Factor by crop year." 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/Security.aspx" title="Security" description="Manage User Security, assign factory to region and assign users to roles and regions." 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			<siteMapNode url="~/Admin/SendFile.aspx" title="Send File" description="Broadcast email file attachments to groups of members or shareholders."
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/Admin/UserMaintenance.aspx" title="User Maintenance" description="update an Existing user's display name or phone number. " 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+		</siteMapNode>
+		<siteMapNode url="~/BeetAccounting/BeetAccountingHome.aspx" title="BeetAccounting" description="" 
+					 roles="WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist">
+			<siteMapNode url="~/BeetAccounting/AgFieldMtn/AgFieldMtnHome.aspx" title="Ag Field Maintenance" description="Contract Entry, Seed, Chemical, and Addresses"
+						 roles="WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin">
+				<siteMapNode url="~/BeetAccounting/AgFieldMtn/TempTransfer.aspx" title="Temp Transfer" description="Temporary Transfer - Delivery Rights" 
+							 roles="WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin" />
+			</siteMapNode>
+      <siteMapNode url="~/BeetAccounting/AccountingFileMtn/AccountingFileMtnHome.aspx" title="Accounting File Maintenance" description="Factories, Stations, Yard Cards, Addresses, Contracts, Deductions, Payment Table" 
+				   roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN">
+        <siteMapNode url="~/BeetAccounting/AccountingFileMtn/DirectDelivery.aspx" title="Direct Deliveries" description="Direct Delivery Scenario Maintenance" 
+					 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />  
+      </siteMapNode>
+			<siteMapNode url="~/BeetAccounting/PaymentProcessing/PaymentProcessingHome.aspx" title="Payment Processing" description="BeetAccounting Payment Processing" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN">
+				<siteMapNode url="~/BeetAccounting/PaymentProcessing/CalculatePayment.aspx" title="Calculate Payment" description="Calculate a Factory Payment" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/BeetAccounting/PaymentProcessing/ExportPaymentData.aspx" title="Export Payment Data" description="Export a Payment" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/BeetAccounting/PaymentProcessing/PaymentDescription.aspx" title="Payment Description" description="Create Payment Descriptions and set whether the payment is Required or Finished" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/BeetAccounting/PaymentProcessing/BeetExcessPaymentStation.aspx" title="Station Excess Beet Pct" description="Station Excess Beet Percent"
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+			</siteMapNode>
+			<siteMapNode url="~/BeetAccounting/ShareholderServices/ShareholderServicesHome.aspx" title="Shareholder Services" description="Stocks, Retains, Patronage, Loans, and Over Plant" 
+						 roles="WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager">
+				<siteMapNode url="~/BeetAccounting/ShareholderServices/CoopEquityDeduction.aspx" title="Equity Deduction - Coop" description="Coop Equity Deduction Descriptions -- create and update" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/BeetAccounting/ShareholderServices/MemberEquityDeduction.aspx" title="Equity Deduction - Member" description="Member Equity Deduction Assignments" 
+							 roles="WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin" />
+				<siteMapNode url="~/BeetAccounting/ShareholderServices/CoopSettings.aspx" title="Over Plant Settings - Coop" description="Coop Factory Over-Under Plant Settings" 
+							 roles="WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin" />
+				<siteMapNode url="~/BeetAccounting/ShareholderServices/OverPlantMember.aspx" title="Over Plant - Member" description="Member Over-Under Plant Settings" 
+							 roles="WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			</siteMapNode>
+		</siteMapNode>
+		<siteMapNode url="~/SHS/ShsHome.aspx" title="Agriculturist Services" description="" 
+					 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager">
+			<siteMapNode url="~/SHS/AlertAnnouncements.aspx" title="Announcements" description="Current Cooperative Events and Shareholder Information" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/AlertForms.aspx" title="Forms" description="Shareholder Financial and Management Forms" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/AlertNews.aspx" title="Ag News" description="Latest News Affecting the Cooperative and Sugar Industry" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/optContactInfo.aspx" title="Contact Information" description="Update Shareholder Fax Number and Email Address" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/optRecDailyHarvestRpt.aspx" title="Harvest Report Settings" description="Choose how Harvest Reports are Sent to Shareholder" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/PaymentCalculator.aspx" title="Payment Calculator" description="Calculate per ton beet payment" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/optChangePswd.aspx" title="Reset Password" description="Reset shareholder password" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode url="~/SHS/VDecisionTree.aspx" title="Seed Decision Tree" description="Compare Seed Varieties by their Resistance and Yield" 
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,						 
+WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
+			<siteMapNode title="Seed Calculator" description="Seed Calculator" url="http://10.10.10.11:8080/Seed_Spacing/SeedSpacing.jsp" roles="*" />			
+			<siteMapNode url="~/SHS/SeedVariety.aspx" title="Seed Variety" description="Manage Seed Varieties used for Agronomy."
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist" />
+			<siteMapNode url="" title="Shrink Data" description="Shrink data entry and reports" roles="*">
+				<siteMapNode url="~/SHS/Rehaul/RehaulEntry.aspx" title="Shrink Data Entry" description="Shrink Data Entry" 
+							 roles="WSC Rehaul Data Entry,WESTERNSUGAR\WSC Rehaul Data Entry,WSC IMSWEB Admin,WESTERNSUGAR\WSC IMSWEB Admin" />
+				<siteMapNode url="~/SHS/Rehaul/RehaulViewer.aspx" title="Shrink Reports" description="Shrink Reports" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Manager,WESTERNSUGAR\WSC AG Manager,WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager,WESTERNSUGAR\WSC Rehaul Data Entry,WSC Rehaul Data Entry" />
+			</siteMapNode>
+		</siteMapNode>
+		<siteMapNode url="~/Fields/FieldHome.aspx" title="Field Information" description="" 
+					 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager">
+			<siteMapNode url="~/Fields/FieldInfo.aspx" title="Field Description" description="Assign a Field to a Contract and update Field Description - Legal Land Description." 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager" />
+			<siteMapNode url="~/Fields/FieldContracting.aspx" title="Field Contracting" description="Update or print out Field Contracting Database information." 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager" />
+			<siteMapNode url="~/Fields/FieldAgronomy.aspx" title="Field Agronomy" description="Update or print out Field Agronomy Database information." 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager" />
+			<siteMapNode url="~/Fields/ShareholderSummary.aspx" title="Shareholder Summary" description="Update or print out Shareholder Summary performance and recommendations." 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager" />
+		</siteMapNode>
+		<siteMapNode url="~/Reports/ReportsHome.aspx" title="Reports" description="" 
+					 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager">
+			<siteMapNode url="~/Reports/GrowerBooks.aspx" title="Grower Books" description="North and South Grower Books broken out by crop year" 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager" />
+			<siteMapNode url="~/Reports/HReports/HarvestReports.aspx" title="Harvest Reports" description="Harvest reports available on the Grower Intranet" 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager">
+				<siteMapNode url="~/Reports/HReports/BeetPaymentBreakdown.aspx" title="Beet Payments by Year" description="Beet Payments by Cal/Crop Year"
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />				
+				<siteMapNode url="~/Reports/HReports/ContractDeliverySummary.aspx" title="Contract Delivery Summary" description="Contract Delivery Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/ContractPayeeSummary.aspx" title="Contract Payee Summary" description="Contract Payee Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/ContractSummary.aspx" title="Contract Summary" description="Contract Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/DailyGrowerTareDetail.aspx" title="Daily Grower Tare Detail" description="Daily Grower Tare Detail" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/DeliveryByDaySummary.aspx" title="Deliveries By Day - Summary" description="Delivery By Day Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/EquityStatement.aspx" title="Equity Statement" description="Equity Statement" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/FieldSummary.aspx" title="Field Summary" description="Field Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/GroTransmittal.aspx" title="Payment Transmittal" description="Grower Payment Transmittal" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/HReports/TonsByTruckByContract.aspx" title="Tons By Truck By Contract" description="Tons By Truck By Contract" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+			</siteMapNode>
+			<siteMapNode url="~/Reports/MReports/MasterReports.aspx" title="Master Reports" description="BeetAccounting Master Reports" 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager">
+				<siteMapNode url="~/Reports/MReports/Certificate.aspx" title="Certificates" description="Equity Certificates for Patronage and Retains" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/ContractCards.aspx" title="Contract Cards" description="Generate Contract Cards" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/ContractPayeeSummary.aspx" title="Contract Payee Summary" description="Contract Payee Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/DailyGrowerTareDetail.aspx" title="Daily Grower Tare Detail" description="Daily Grower Tare Detail"
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />				
+				<siteMapNode url="~/Reports/MReports/DirectDeliveryDetails.aspx" title="Direct Delivery Details" description="Direct Delivery Details" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/DirectDeliveryPaymentExport.aspx" title="Direct Delivery Payment Export" description="Direct Delivery payment export" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/DirectDeliveryStatement.aspx" title="Direct Delivery Statement" description="Direct Delivery statement" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/EquityStatement.aspx" title="Equity Statement" description="Member Equity Statement" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/EquityPayment.aspx" title="Export File" description="Equity Payment Export" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/Beet1099.aspx" title="Export Section 199 1099's " description="IRS Section 199 - Income Attributable to Domestic Production Activities" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/FieldAgronomy.aspx" title="Field Agronomy" description="Field Agronomy" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/FieldContracting.aspx" title="Field Contracting" description="Field Contracting" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/FieldSummary.aspx" title="Field Summary" description="Field Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/LandownerLetter.aspx" title="Landowner Letter" description="Landowner Letter" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+				<siteMapNode url="~/Reports/MReports/NoticeOfPassthrough.aspx" title="Notice of Passthrough" description="Notice of Passthrough"
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />				
+				<siteMapNode url="~/Reports/MReports/PaymentSummary.aspx" title="Payment Summary" description="Payment Summary" 
+							 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only" />
+				<siteMapNode url="~/Reports/MReports/Transmittal.aspx" title="Payment Transmittal" description="Payment Transmittals" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/ShareholderSummary.aspx" title="Shareholder Summary" description="Shareholder Summary" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/StatementPatronageUnitRetain.aspx" title="Statement: Patronage or Retain" description="Statements for Patronage or Retain Payments" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />
+				<siteMapNode url="~/Reports/MReports/TempTransfer.aspx" title="Temp Transfer" description="Temp Transfers" 
+							 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,
+WSC AG ADMIN,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Admin,WSC AG SRS Manager" />				
+			</siteMapNode>
+			<siteMapNode url="~/Reports/University.aspx" title="Research Info" description="University and USDA research documents organized by source and crop year." 
+						 roles="WESTERNSUGAR\WSC AG ADMIN,WESTERNSUGAR\WSC AG Agriculturist,WESTERNSUGAR\WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Manager,
+WESTERNSUGAR\WSC AG Read-Only,WESTERNSUGAR\WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Manager,WSC AG ADMIN,WSC AG SRS Admin,WSC AG Agriculturist,WSC AG Beet Clerk,WSC AG Manager,WSC AG Read-Only,WSC AG SRS Manager" />
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

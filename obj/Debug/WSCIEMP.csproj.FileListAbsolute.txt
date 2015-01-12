@@ -1,0 +1,10 @@
+C:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.dll
+C:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.pdb
+C:\VssWrk\Western\WSCIEMP\obj\Debug\ResolveAssemblyReference.cache
+C:\VssWrk\Western\WSCIEMP\obj\Debug\WSCIEMP.dll
+C:\VssWrk\Western\WSCIEMP\obj\Debug\WSCIEMP.pdb
+D:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.dll
+D:\VssWrk\Western\WSCIEMP\bin\WSCIEMP.pdb
+D:\VssWrk\Western\WSCIEMP\obj\Debug\WSCIEMP.dll
+D:\VssWrk\Western\WSCIEMP\obj\Debug\WSCIEMP.pdb
+D:\VssWrk\Western\WSCIEMP\obj\Debug\WSCIEMP.csprojResolveAssemblyReference.cache

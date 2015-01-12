@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Alerts>		
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/Forms/1040es.pdf</Url>
+		<Title>Ag News 2008</Title>
+		<AbstractDesc>Acres update: contracted, lost, rating, weather, harvest etc.</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/Forms/2003104ep.pdf</Url>
+		<Title>2008 NewsLetter Announcement</Title>
+		<AbstractDesc>Newsletter Announcement.</AbstractDesc>
+		<IsActive>0</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/Forms/f1040e03.pdf</Url>
+		<Title>Western Sugar Newsletter November 2008</Title>
+		<AbstractDesc>Western Sugar Newsletter November 2008</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/Forms/f1040sse.pdf</Url>
+		<Title>7 Day Weather Outlook</Title>
+		<AbstractDesc>Weather Update.</AbstractDesc>
+		<IsActive>0</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/Forms/p505.pdf</Url>
+		<Title>30 Day Weather Outlook</Title>
+		<AbstractDesc>Weather Update.</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/Forms/p553.pdf</Url>
+		<Title>Letter from Inder Mathur, President WSC – Board of Directors makes decision on petitions.....</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>0</IsActive>
+	</AlertItem>					
+</Alerts>

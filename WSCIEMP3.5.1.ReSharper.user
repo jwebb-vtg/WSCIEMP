@@ -1,0 +1,397 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="BABD2A2F-03A0-4FDE-B6C0-4CEDC96E4CAA/d:Admin/f:ExportPerformance.aspx.cs" caret="0" fromTop="0" />
+      <File id="BABD2A2F-03A0-4FDE-B6C0-4CEDC96E4CAA/d:App_Code/d:WSCData/f:WSCFieldExport.cs" caret="83467" fromTop="16" />
+    </RecentFiles>
+    <RecentEdits />
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.7\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="try" priority="4" />
+      <Item value="catch" priority="5" />
+      <Item value="int" priority="30" />
+      <Item value="Convert`0" priority="0" />
+      <Item value="shid" priority="0" />
+      <Item value="else" priority="13" />
+      <Item value="String`0" priority="8" />
+      <Item value="public" priority="11" />
+      <Item value="class" priority="0" />
+      <Item value="ListBeetContractDeliveryDates`0" priority="1" />
+      <Item value="string" priority="30" />
+      <Item value="ContractNumber" priority="0" />
+      <Item value="contractNumber" priority="5" />
+      <Item value="DeliveryDate" priority="0" />
+      <Item value="deliveryDate" priority="0" />
+      <Item value="List" priority="7" />
+      <Item value="ListBeetContractDeliveryDateItem`0" priority="1" />
+      <Item value="new" priority="12" />
+      <Item value="List&lt;ListBeetContractDeliveryDateItem&gt;" priority="0" />
+      <Item value="using" priority="11" />
+      <Item value="System" priority="16" />
+      <Item value="Data" priority="7" />
+      <Item value="while" priority="1" />
+      <Item value="dr" priority="26" />
+      <Item value="stateList" priority="1" />
+      <Item value="ListBeetContractDeliveryDateItem" priority="0" />
+      <Item value="if" priority="36" />
+      <Item value="Page" priority="0" />
+      <Item value="lstDgtdDeliveryDate" priority="0" />
+      <Item value="chkPosted" priority="0" />
+      <Item value="DateTime`0" priority="3" />
+      <Item value="bool" priority="20" />
+      <Item value="chkPreview" priority="0" />
+      <Item value="chkEmail" priority="0" />
+      <Item value="chkFax" priority="0" />
+      <Item value="chkWebHardCopyOnly" priority="0" />
+      <Item value="SqlConnection" priority="0" />
+      <Item value="stationList" priority="1" />
+      <Item value="contractList" priority="1" />
+      <Item value="isPreview" priority="6" />
+      <Item value="isHardCopy" priority="3" />
+      <Item value="isEmail" priority="2" />
+      <Item value="isFax" priority="1" />
+      <Item value="DeliveryID" priority="0" />
+      <Item value="deliveryID" priority="0" />
+      <Item value="ListBeetContractIDItem`0" priority="0" />
+      <Item value="decimal" priority="3" />
+      <Item value="spParams" priority="0" />
+      <Item value="Linq" priority="1" />
+      <Item value="Single`1" priority="0" />
+      <Item value="p" priority="6" />
+      <Item value="cropYear" priority="1" />
+      <Item value="ConsoleKeyInfo`0" priority="0" />
+      <Item value="object" priority="0" />
+      <Item value="List`0" priority="0" />
+      <Item value="ListGrowerTareItem`0" priority="13" />
+      <Item value="Collections" priority="2" />
+      <Item value="Generic" priority="1" />
+      <Item value="fromDate" priority="1" />
+      <Item value="toDate" priority="0" />
+      <Item value="factoryList" priority="0" />
+      <Item value="isPosted" priority="2" />
+      <Item value="hdrList" priority="7" />
+      <Item value="foreach" priority="2" />
+      <Item value="in" priority="2" />
+      <Item value="procName" priority="1" />
+      <Item value="iDeliveryID" priority="0" />
+      <Item value="iContractID" priority="0" />
+      <Item value="iContract_No" priority="0" />
+      <Item value="iDelivery_Station_ID" priority="0" />
+      <Item value="iFirst_Net_Pounds" priority="0" />
+      <Item value="iTare_Pounds" priority="0" />
+      <Item value="iFinal_Net_Pounds" priority="0" />
+      <Item value="iExSugarPerTon" priority="0" />
+      <Item value="iDelivery_Factory_No" priority="0" />
+      <Item value="fromDateTemp" priority="1" />
+      <Item value="out" priority="5" />
+      <Item value="txtToDate" priority="1" />
+      <Item value="hdrItem" priority="40" />
+      <Item value="false" priority="3" />
+      <Item value="Document`0" priority="0" />
+      <Item value="null" priority="11" />
+      <Item value="PdfWriter`0" priority="0" />
+      <Item value="List&lt;ListGrowerTareItem&gt;" priority="0" />
+      <Item value="from" priority="1" />
+      <Item value="select" priority="2" />
+      <Item value="item" priority="11" />
+      <Item value="where" priority="1" />
+      <Item value="busName" priority="2" />
+      <Item value="address1" priority="1" />
+      <Item value="address2" priority="1" />
+      <Item value="CSZ" priority="1" />
+      <Item value="emailList" priority="0" />
+      <Item value="faxList" priority="1" />
+      <Item value="rptDailyGrowerTareDetailMaster`0" priority="1" />
+      <Item value="conn" priority="0" />
+      <Item value="contractID" priority="0" />
+      <Item value="IRtfElementInterface`0" priority="0" />
+      <Item value="drHdr" priority="6" />
+      <Item value="ListGrowerTareItem" priority="0" />
+      <Item value="growerTareList" priority="4" />
+      <Item value="for" priority="2" />
+      <Item value="i" priority="5" />
+      <Item value="growerTareItem" priority="1" />
+      <Item value="lastContractNumber" priority="11" />
+      <Item value="nextDeliveryDate" priority="0" />
+      <Item value="destinationFile" priority="5" />
+      <Item value="filePath" priority="1" />
+      <Item value="pgEvent" priority="1" />
+      <Item value="fs" priority="7" />
+      <Item value="emailAddress" priority="5" />
+      <Item value="XfaForm`0" priority="1" />
+      <Item value="faxNumber" priority="3" />
+      <Item value="return" priority="2" />
+      <Item value="true" priority="5" />
+      <Item value="subject" priority="0" />
+      <Item value="fromEmail" priority="0" />
+      <Item value="toEmail" priority="0" />
+      <Item value="pathAttach" priority="0" />
+      <Item value="WSCIEMP" priority="1" />
+      <Item value="Common" priority="1" />
+      <Item value="AppHelper`0" priority="0" />
+      <Item value="Config" priority="0" />
+      <Item value="EmailTargetsElement`0" priority="0" />
+      <Item value="EmailSettingsElement`0" priority="0" />
+      <Item value="FileInfo`0" priority="0" />
+      <Item value="CWarning`0" priority="0" />
+      <Item value="CWarning" priority="0" />
+      <Item value="throw" priority="0" />
+      <Item value="warn" priority="0" />
+      <Item value="emailFaxList" priority="0" />
+      <Item value="drAddr" priority="0" />
+      <Item value="Nullable`0" priority="0" />
+      <Item value="hardCopyList" priority="4" />
+      <Item value="readonly" priority="0" />
+      <Item value="float" priority="3" />
+      <Item value="document" priority="8" />
+      <Item value="color" priority="0" />
+      <Item value="BaseColor`0" priority="0" />
+      <Item value="writer" priority="6" />
+      <Item value="Paragraph`0" priority="0" />
+      <Item value="Paragraph" priority="2" />
+      <Item value="_headerFont" priority="0" />
+      <Item value="NullReferenceException`0" priority="0" />
+      <Item value="_normalFont" priority="5" />
+      <Item value="firstPass" priority="0" />
+      <Item value="prefixSep" priority="1" />
+      <Item value="Font`0" priority="0" />
+      <Item value="font" priority="3" />
+      <Item value="_failFont" priority="1" />
+      <Item value="Phrase`0" priority="0" />
+      <Item value="Phrase" priority="0" />
+      <Item value="ImgTemplate`0" priority="0" />
+      <Item value="lastDeliveryStationNo" priority="0" />
+      <Item value="RptType" priority="0" />
+      <Item value="rptType" priority="0" />
+      <Item value="stationID" priority="0" />
+      <Item value="ShowTare" priority="1" />
+      <Item value="showTare" priority="0" />
+      <Item value="firstStationID" priority="0" />
+      <Item value="lastDeliveryDate" priority="0" />
+      <Item value="private" priority="1" />
+      <Item value="_suppressHeader" priority="0" />
+      <Item value="value" priority="0" />
+      <Item value="_isSummary" priority="0" />
+      <Item value="PdfReader`0" priority="0" />
+      <Item value="headerLayout" priority="0" />
+      <Item value="Length" priority="0" />
+      <Item value="var" priority="3" />
+      <Item value="_labelFont" priority="0" />
+      <Item value="static" priority="0" />
+      <Item value="ref" priority="0" />
+      <Item value="PdfPTable`0" priority="0" />
+      <Item value="UnitType`0" priority="0" />
+      <Item value="iDeliveryDate" priority="0" />
+      <Item value="iWeightIn" priority="0" />
+      <Item value="iWeightOut" priority="0" />
+      <Item value="iDirtTaken" priority="0" />
+      <Item value="iNetWt" priority="0" />
+      <Item value="rptDailyGrowerTareDetail`0" priority="1" />
+      <Item value="lastStationID" priority="1" />
+      <Item value="index" priority="4" />
+      <Item value="sendMethod" priority="1" />
+      <Item value="File`0" priority="2" />
+      <Item value="LogException`0" priority="1" />
+      <Item value="wscEx" priority="0" />
+      <Item value="_AppDomain`0" priority="0" />
+      <Item value="Web" priority="0" />
+      <Item value="HttpContext`0" priority="0" />
+      <Item value="fax" priority="3" />
+      <Item value="const" priority="0" />
+      <Item value="toVoiceNumber" priority="0" />
+      <Item value="fromFaxVoiceNumber" priority="1" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="Runtime" priority="0" />
+      <Item value="InteropServices" priority="0" />
+      <Item value="COMException`0" priority="0" />
+      <Item value="cex" priority="1" />
+      <Item value="comErrorInfo" priority="1" />
+      <Item value="key" priority="0" />
+      <Item value="definition" priority="0" />
+      <Item value="RFCOMAPILib" priority="3" />
+      <Item value="Fax`0" priority="1" />
+      <Item value="faxserver" priority="3" />
+      <Item value="CreateObjectType`0" priority="0" />
+      <Item value="BoolType`0" priority="0" />
+      <Item value="toFaxNumber" priority="0" />
+      <Item value="toFaxBusName" priority="0" />
+      <Item value="ProcessThread`0" priority="0" />
+      <Item value="ProcessInfo`0" priority="0" />
+      <Item value="Threading" priority="0" />
+      <Item value="Thread`0" priority="1" />
+      <Item value="lineNum" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty`0" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlDataReader">
+      <Item value="Read`0" priority="2" />
+      <Item value="GetString`0" priority="9" />
+      <Item value="GetOrdinal`0" priority="20" />
+      <Item value="GetInt32`0" priority="9" />
+      <Item value="GetDecimal`0" priority="2" />
+      <Item value="GetBoolean`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="1" />
+      <Item value="Count" priority="6" />
+      <Item value="FindAll`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.Page">
+      <Item value="IsPostBack" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.ListBox">
+      <Item value="Items" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.ListItemCollection">
+      <Item value="Clear`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.CheckBox">
+      <Item value="Checked" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlParameter">
+      <Item value="ParameterName" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="TryParse`0" priority="0" />
+      <Item value="Now" priority="0" />
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WSCData.ListGrowerTareItem">
+      <Item value="Contract_No" priority="9" />
+      <Item value="DeliveryID" priority="1" />
+      <Item value="ExSugarPerTon" priority="1" />
+      <Item value="SLM_Pct" priority="1" />
+      <Item value="Sugar_Content" priority="1" />
+      <Item value="Tare" priority="1" />
+      <Item value="Final_Net_Pounds" priority="1" />
+      <Item value="Tare_Pounds" priority="1" />
+      <Item value="First_Net_Pounds" priority="1" />
+      <Item value="Delivery_Factory_No" priority="2" />
+      <Item value="delivery_Station_No" priority="0" />
+      <Item value="Delivery_Station_Name" priority="1" />
+      <Item value="Delivery_Station_No" priority="4" />
+      <Item value="Delivery_Station_ID" priority="4" />
+      <Item value="Delivery_Date" priority="11" />
+      <Item value="ContractID" priority="3" />
+      <Item value="RptType" priority="4" />
+      <Item value="Sussess" priority="1" />
+      <Item value="Success" priority="6" />
+      <Item value="ShowTare" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WSCReports.rptDailyGrowerTareDetailMaster">
+      <Item value="GetAddressIfno`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Substring`0" priority="0" />
+      <Item value="Length" priority="5" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Close`0" priority="0" />
+      <Item value="Dispose`0" priority="1" />
+      <Item value="Flush`0" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Void">
+      <Item value="Equals`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WSCIEMP.Common.AppHelper">
+      <Item value="SendEmail`0" priority="0" />
+      <Item value="SendFax`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Delete`0" priority="1" />
+      <Item value="Exists`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:iTextSharp.text.Document">
+      <Item value="NewPage`0" priority="0" />
+      <Item value="Add`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@iTextSharp.text.BaseColor">
+      <Item value="RED" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@iTextSharp.text.Font">
+      <Item value="BOLD" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:iTextSharp.text.Paragraph">
+      <Item value="Add`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WSCReports.DailyGrowerTareDetailEvent">
+      <Item value="SuppressHeader" priority="0" />
+      <Item value="IsSummary" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="Distinct`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WSCReports.rptDailyGrowerTareDetail">
+      <Item value="AddSampleDetail`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpContext">
+      <Item value="Current" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:iTextSharp.text.pdf.PdfWriter">
+      <Item value="Flush`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WSCIEMP.Config.EmailSettingsElement">
+      <Item value="FaxServer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.InteropServices.COMException">
+      <Item value="ErrorCode" priority="1" />
+      <Item value="Data" priority="1" />
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.IDictionary">
+      <Item value="Keys" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RFCOMAPILib.FaxServerClass">
+      <Item value="CreateObject" priority="0" />
+      <Item value="AuthorizationUser" priority="0" />
+      <Item value="CloseServer`0" priority="0" />
+      <Item value="User" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@RFCOMAPILib.CreateObjectType">
+      <Item value="coFax" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RFCOMAPILib.User">
+      <Item value="SendNotifyOnIncompleteFirstTime" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@RFCOMAPILib.BoolType">
+      <Item value="False" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="Sleep`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RFCOMAPILib.Fax">
+      <Item value="Send`0" priority="0" />
+      <Item value="Owner" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Alerts>		
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/AgNews2008.pdf</Url>
+		<Title>Ag News 2008</Title>
+		<AbstractDesc>Acres update: contracted, lost, rating, weather, harvest etc.</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/Newsletter Announcement.pdf</Url>
+		<Title>2008 NewsLetter Announcement</Title>
+		<AbstractDesc>Newsletter Announcement.</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/Western Sugar Newsletter Nov 2008.pdf</Url>
+		<Title>Western Sugar Newsletter November 2008</Title>
+		<AbstractDesc>Western Sugar Newsletter November 2008</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/2008-7day-Forecast.pdf</Url>
+		<Title>7 Day Weather Outlook</Title>
+		<AbstractDesc>Weather Update.</AbstractDesc>
+		<IsActive>0</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/2008-30day-Forecast.pdf</Url>
+		<Title>30 Day Weather Outlook</Title>
+		<AbstractDesc>Weather Update.</AbstractDesc>
+		<IsActive>0</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/IKM Shareholder letter.pdf</Url>
+		<Title>Letter from Inder Mathur, President WSC – Board of Directors makes decision on petitions.....</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/Alerus letter 2-20-2008.pdf</Url>
+		<Title>Western Sugar Cooperative (WSC) enters into a trading
+agreement with Alerus Securities Corporation (Alerus)</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/mb aug 22.pdf</Url>
+		<Title>Sugar Price Update: Midwest Milling and Baking News August 26th, 2008</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>0</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/Roundup Ready FAQs February 2008.pdf</Url>
+		<Title>Roundup Ready Frequently Ask Questions</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/South Yields Revenues.pdf</Url>
+		<Title>South 2008 Crops Revenue Comparison</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/North Yields Revenues.pdf</Url>
+		<Title>North 2008 Crops Revenue Comparison</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/WesternSugar 08July-fert cost Ver2.pdf</Url>
+		<Title>July 2008 Fertilizer Prices</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+	<AlertItem>
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/Share Obligations Letter.pdf</Url>
+		<Title>2007 Shareholder Obligations Letter</Title>
+		<AbstractDesc></AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>
+
+					
+</Alerts>

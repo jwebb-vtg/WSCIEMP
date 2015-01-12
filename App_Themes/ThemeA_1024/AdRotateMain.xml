@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner001.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner002.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner003.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner004.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner005.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner006.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner007.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>8</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner008.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner009.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>6</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner010.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>6</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner011.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner012.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>6</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner013.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner014.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner015.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner017.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner018.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>8</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner019.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner020.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>6</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner021.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>4</Impressions>
+	</Ad>
+	<Ad>
+		<ImageUrl>~/App_Themes/ThemeA_1024/images/Header_WSC_Banner022.gif</ImageUrl>
+		<AlternateText>Western Sugar Cooperative</AlternateText>
+		<Impressions>5</Impressions>
+	</Ad>
+</Advertisements>

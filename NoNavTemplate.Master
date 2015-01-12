@@ -1,0 +1,48 @@
+﻿<%@Master Language="C#" AutoEventWireup="true" CodeBehind="NoNavTemplate.Master.cs" 
+Inherits="WSCIEMP.NoNavTemplate"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head runat="server" id="TmplHead">
+    <link type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/redmond/jquery-ui.css" rel="Stylesheet" />    
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.min.js"></script>
+
+    <title>IMS Web</title>
+</head>
+<body runat="server" id="MasterBody">
+    <form id="MainForm" runat="server">
+        <div id="wrapper">
+            <div id="headerR1"></div>
+	        <div id="headerR2"></div>
+            <div id="container">
+	            <div id="MainContentCenter">
+				    <table class="titleTable" cellspacing="0" cellpadding="0" border="0">
+					    <tr>
+						    <td class="PageTitle"><asp:ContentPlaceHolder ID="PageTitleHolder" runat="server"></asp:ContentPlaceHolder></td>
+					    </tr>
+					    <tr>
+						    <td style="MARGIN: 0px; TEXT-ALIGN: center">
+							    <div class="WarningOff" id="divWarning" runat="server"></div>
+						    </td>
+					    </tr>
+					    <tr style="line-height:10px;"><td>&nbsp;</td></tr>
+				    </table>	
+				    <div>
+                        <asp:ContentPlaceHolder ID="ContentCenter" runat="server">                
+                        </asp:ContentPlaceHolder>
+                    </div>               
+	            </div>
+            </div>
+            <div id="footer">            	
+	            <br style="line-height:7px;"/>            		
+	            <span>&nbsp;7555 E. Hampden Ave., Suite 600, Denver, CO 80231&nbsp;</span> 
+	            <span class="spacer">|</span> 
+	            <span>&nbsp;Phone 303.830.3939</span><br />
+	            <span>©&nbsp;2005 The Western Sugar Cooperative. All Rights Reserved.</span>
+            </div>          
+        </div>
+    </form>
+</body>
+</html>

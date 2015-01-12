@@ -1,0 +1,438 @@
+﻿body {
+    /*font-size:100%;*/
+    font-size:10px;
+    line-height:16px;
+    padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; text-align: center; 
+    background: #ffffff;
+}
+
+body, div, p, th, td, li, dd	{
+	font-family: Verdana, Lucida, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+#wrapper {
+	text-align: left; margin: 0px auto; padding: 0px; border:0; background-color: #ffffff;
+	width: 970px;		/* Examine at 1024 X 768 before making a change. Wrapper.width = MainContentLeft.width + MainContentCenter.width */
+}
+#headerR1 {
+	margin: 0; padding: 0; border:0; height: 61px; background-color: #ffffff;   
+}
+#headerR2 {
+	margin: 0; background-color: #ffffff; font-size: 12px;
+}
+
+.breadcrumbHolder 
+{
+	float: left; width: 800px; text-align:left; background-color:#ffffff; font-size: 11px;	  
+}
+
+#dateStamp { 
+	margin: 0; padding: 0; float: left; width: 170px; background: #ffffff; font-size: 11px; text-align: center;
+	height: 1% /* Holly hack for Peekaboo Bug */
+}
+
+#MainContentCenter  	
+{		
+	width: 970px; float: none;
+	margin: 0; padding: 0;
+	/*background: #ffffff; */
+	background: url("images/Back_WSC.gif");
+	font-family: Verdana, Lucida, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	height: 1% /* Holly hack for Peekaboo Bug */
+}
+#MainContentCenter .titleTable  {margin: 0; padding: 0; vertical-align: top;}
+
+#LinkTabs {font-size: 11px; color: #000000; font-weight: bold; background-color: White; margin-right: 30px; height: 18px; }
+#LinkTabs .LinkTabOn:link, .LinkTabOn:visited, .LinkTabOn:hover {text-decoration: none; font-size: 11px; color: #000000; font-weight: bold; cursor:default; }
+#LinkTabs .LinkTabOff:link, .LinkTabOff:visited {text-decoration: underline; font-size: 11px; color: #000000; font-weight: bold;}
+
+#footer {
+	clear: both; background: #ffffff; line-height: 16px; vertical-align: top; text-align: center; float: none;
+	border-top: solid 6px #B0B0B0; padding-top: 7px; 
+	background-color: #ffffff;
+}
+
+.PageTitle
+{
+	margin: 0 0 0 0;
+	padding:0 0 0 0;
+	height: 30px;
+	vertical-align: bottom;
+	color: #990000;
+	line-height: 25px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+span.spacer { COLOR: #FFFFFF; }
+
+.footerMenuLink {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase;	}
+.permLink { FONT-SIZE: 10px; COLOR: #0066ff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+
+.headerMenuLinkLocal {font-family: Arial, Helvetica, sans-serif; font-weight: bold; width: 100%; line-height: 30px; text-align: left;}
+.mnuTopStaticMenuItemStyleLocal {background-color: #ffffff; color: #006600; padding-left: 7px;}
+table.mnuTopStaticMenuItemStyleLocal td{font-size: 11px; } 
+.mnuTopStaticHoverStyleLocal {background-color: #E8E8E8; color: #006600;} 
+
+.headerMenuLink {font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #ffffff; width: 970px; line-height: 20px; text-align: center; }
+.mnuTopStaticMenuItemStyle {background-color: #000000; color: #ffffff; padding-right: 30px;}
+table.mnuTopStaticMenuItemStyle td{font-size: 11px;} 
+
+.mnuTopStaticHoverStyle {background-color: #990000; color: #ffffff; padding-right: 30px;}
+.mnuTopStaticSelectedStyle {background-color: #009966; color: #ffffff;}
+
+.mnuTopDynamicMenuStyle
+{background-color: #CCFF99; color: #000000; width: 195px; height: 22px; line-height: 20px; text-align: left; } 
+.mnuTopDynamicHoverStyle
+{background-color: #CC0033; color: #ffffff; border: 1px dashed #99ffff; width: 195px; height: 22px; line-height: 20px; text-align: left;}
+table.mnuTopDynamicMenuStyle td{font-size: 11px;} 
+
+.leftMenuLink
+{font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; width: 140px; line-height: 20px; text-align: left;}
+.mnuLeftStaticMenuItemStyle
+{color: #000000; }
+.mnuLeftStaticHoverStyle
+{color: #ffffff; background-color: #990000;}
+.mnuLeftStaticSelectedStyle
+{background-color: #ffcc66;}
+
+.menuDesc 
+{padding-left:10px; font-size:12px; font-weight:normal; vertical-align: top;  background-color:#F0F0F0; color:#003300; margin: 0;
+ }
+ 
+.crumbCurrentNodeStyle 
+{
+	font-weight: normal;
+	color: #000000;
+	padding-left: 5px;
+	background-color:#ffff99;	
+}
+.crumbNodeStyle
+{
+	color: #3300cc;
+	font-weight: normal;		
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
+	background-color:#ffff99;	
+}
+.crumbPathSeperatorStyle 
+{
+	color: #000000;
+	font-weight: bold;	
+	padding-right: 5px;
+	background-color:#ffff99;	
+}
+                     
+.LabelText {font-weight:bold;vertical-align: top;font-size: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;}	
+.ButtonText {font-size:12px; font-weight:normal; vertical-align: top; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; }
+span.SectHdg{font-weight: bold; font-size: 11px;  color: #006600;}
+p.Indent {padding-left: 15px; font-size:12px; font-weight:normal; vertical-align: top;}
+.LgText { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 220px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.VLgText { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 260px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.MedText { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 150px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.SmList { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 50px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.MedList { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 120px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.LgList { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 290px; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.MedListPlus { FONT-SIZE: 12px; VERTICAL-ALIGN: top; WIDTH: 155px; LINE-HEIGHT: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.CtrlCntNo { FONT-SIZE: 11px; VERTICAL-ALIGN: top; WIDTH: 65px; LINE-HEIGHT: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+.tableBorder { BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; MARGIN-RIGHT: 0; BORDER-BOTTOM: black 1px solid; }
+.vSpacer { LINE-HEIGHT: 8px; HEIGHT: 8px }
+	
+.halfLine {line-height: 5px;}
+.SortImage {font-family: Webdings; font-size: 13px;}
+
+.ctlWidth40 {width: 40px; font-size: 12px;}
+.ctlWidth60 {width: 60px; font-size: 12px;}
+.ctlWidth75 {width: 75px; font-size: 12px;}
+.ctlWidth90 {width: 110px; font-size: 12px;}
+.tRowH25 {height: 25px;}
+
+table.fixHeader { background-color:#990000; color:#ffffff; border-color:#404040; text-align:center; line-height:14px; }
+table.fixHeader th { font-family: Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold;}
+
+.grdColor1500 { width: 1515px; }
+table.grdColor1500 td { font-size: 11px;}
+table.grdColor1500 th { font-size: 11px;}
+
+.grdColor920 { width: 935px; }
+table.grdColor920 td { font-size: 11px;}
+table.grdColor920 th { font-size: 11px;}
+
+.grdColor900 { width: 920px; }
+table.grdColor900 td { font-size: 11px;}
+table.grdColor900 th { font-size: 11px;}
+
+.grdColor700 { width: 700px; }
+table.grdColor700 td { font-size: 11px;}
+table.grdColor700 th { font-size: 11px;}
+
+.grdColor650 { width: 650px; }
+table.grdColor650 td { font-size: 11px;}
+table.grdColor650 th { font-size: 11px;}
+
+.grdColor600 { width: 580px; }
+table.grdColor600 td { font-size: 11px;}
+table.grdColor600 th { font-size: 11px;}
+
+.grdColor460 { width: 460px; }
+table.grdColor460 td { font-size: 11px;}
+table.grdColor460 th { font-size: 11px;}
+
+.grdColor400 { width: 400px; }
+table.grdColor400 td { font-size: 11px;}
+table.grdColor400 th { font-size: 11px;}
+
+.grdColor325 { width: 275px; }
+table.grdColor325 td { font-size: 11px;}
+table.grdColor325 th { font-size: 11px;}
+
+.grdRowHiLite { font-size: 10px; color:#000000; background-color:#ccffcc; font-weight: bold;}
+.grdRowHiLite td { font-size: 10px; color:#000000; background-color:#ccffcc; font-weight: bold;}
+
+div.gridFrame {width: 945px; height: 100%; font-size: 10px; padding: 5px 0px 5px 5px; margin: 0 0 0 0; border: solid 1px #000000}
+/* overflow-x: scroll; overflow-y: none;  */        
+div.PagePartWide {border: solid 1px #aaa; font-size: 10px; width: 945px; padding: 0 0 0 0}
+
+DIV.BlockNav A:link { FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #009933; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline }
+DIV.BlockNav A:visited { FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #336633; LINE-HEIGHT: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline }
+.rbdr { BORDER-RIGHT: #cc9966 1px solid }
+.rtbdr { BORDER-RIGHT: #cc9966 1px solid; BORDER-TOP: #cc9966 1px solid }
+.resultStyle { TABLE-LAYOUT: auto; WIDTH: 636px }
+	
+table.stdTableLayout
+{
+	/*width: 928px;*/
+	width: 100%;		
+	font-size:10px;
+	border: 0;		
+}
+
+/* 
+================================================================
+Content control layout for two columns of data entry controls 
+================================================================ */
+table.DataBlock2C 
+{
+	font-size:10px;
+	width: 845px;
+}
+table.DataBlock2C tbody tr {height: 22px; text-align: left;}
+table.DataBlock2C > tbody > tr {height: 22px; text-align: left;}
+
+table.DataBlock2C tbody tr td.lcol
+{
+	text-decoration: underline;	
+	text-align: left;
+	width: 25%;
+}
+/*
+table.DataBlock2C > tbody > tr:first-child > td:first-child
+{
+	text-decoration: underline;	
+	text-align: left;
+	width: 15%;
+}
+*/
+/*table.DataBlock2C input[type='text'] {width: 300px;}*/
+table.DataBlock2C .chk input {width: 23px;}
+table.DataBlock2C input {width: 300px;}
+table.DataBlock2C select {width: 300px;}
+
+table.layoutAvg  tbody tr {height: 24px; text-align: left;}
+table.layoutAvg > tbody > tr {height: 24px; text-align: left;}
+
+table.wideTable {width: 99%; padding: 5px; margin: 0; vertical-align: top; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px;}
+
+/* 
+================================================================
+Content control layout for four columns of data entry controls 
+================================================================ */
+table.DataBlock4C 
+{
+	font-size:10px;
+	width: 928px;
+	border: 0;	
+}
+table.DataBlock4C tbody tr {height: 18px;}
+table.DataBlock4C > tbody > tr {height: 18px;}
+
+table.DataBlock4C tbody tr td.lcol
+{
+	font-weight: bold;	
+	width: 232px;
+}
+
+/*
+table.DataBlock4C > tbody > tr:first-child > td:first-child
+{
+	font-weight: bold;	
+	width: 232px;
+}
+
+table.DataBlock4C > tbody > tr:first-child > td:first-child + td
+{
+	font-weight: bold;	
+	width: 232px;
+}
+table.DataBlock4C > tbody > tr:first-child > td:first-child + td + td
+{
+	font-weight: bold;	
+	width: 232px;
+}
+table.DataBlock4C > tbody > tr:first-child > td:first-child + td + td + td
+{
+	font-weight: bold;	
+	width: 232px;
+}
+*/
+table.DataBlock4C input.entry {width: 170px;}
+table.DataBlock4C select {width: 170px;}
+/*
+table.DataBlock4C input[type='text'] {width: 170px;}
+table.DataBlock4C select {width: 170px;}
+*/
+.WideLeftMargin {width: 75px;}
+
+/* 
+================================================================
+	Highlights 
+================================================================ */
+/* BUTTONS */
+.BtnSm {font-weight:bold; vertical-align: top; font-size: 14px; width: 44px;}
+.BtnSm11 {font-weight:bold; vertical-align: top; font-size: 11px; width: 44px;}
+.BtnMedSm {font-weight:bold; vertical-align: top; font-size: 11px; width: 80px;}
+.BtnMed {font-weight:bold; vertical-align: top; font-size: 11px; width: 90px;}
+.BtnLg {font-weight:bold; vertical-align: top; font-size: 11px; width: 130px;}
+.BtnXLg {font-weight:bold; vertical-align: middle; height:24px; font-size: 11px; width: 180px;}
+
+/* 
+================================================================
+	Highlights 
+================================================================ */
+.highlightRO 
+{
+	font-size: 12px;
+	background-color:#E0E0E0;
+	color: #000000;			
+}
+.highlight
+{
+	background-color: #fefbd2;
+	color: #000080;		
+}
+.highlightPlus
+{
+	font-size: 11px;
+	background-color: #ffff33;
+	color: #000080;		
+}
+
+/* 
+================================================================
+	Show/Hide Blocks and Warnings
+================================================================ */
+.DisplayNone {display:none;}
+.DisplayOff
+{
+	display: none;
+	visibility: hidden;
+}
+.DisplayOn
+{
+	display: block;
+	visibility: visible;
+}
+.WarningOn
+{
+	font-size: 12px;
+	width: 100%;
+	color: red;
+	text-align: center;
+	visibility: visible;
+	display: block;
+}
+.WarningOff
+{
+	visibility: hidden;
+	display: none;
+}
+
+.WarningLarge
+{
+	font-size: 16px;
+	width: 100%;
+	color: red;
+	font-family: Arial, Verdana, Helvetica;
+	font-weight: bold;
+	text-align: center;
+	visibility: visible;
+}
+
+.ErrorHeading
+{
+	font-size: 14px;
+	font-weight: bold; 
+	color: #b0232a; 
+	font-family: Arial, Verdana, Helvetica;
+}
+
+/* 
+================================================================
+	***  LEGACY wsci/wsciemp styles  ***
+================================================================ */
+#MainSectionNoVMenu
+{
+	vertical-align: top;
+	width: 815px;
+	border: solid 0 black;
+	padding: 0;
+	margin-left: 0px;
+	background-color: #ffffff;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 16px;	
+}
+table.copyTableNoVMenu
+{
+	/*width: 815px;*/
+	width: 100%;
+	padding: 5px;
+	margin: 0;
+	vertical-align: top;	
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 16px;	
+}
+td.pgTitle
+{
+	margin:0;
+	padding:0 0 0 0;
+	height: 25px;
+	vertical-align: bottom;
+	color: #990000;
+	line-height: 30px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+TD.tabHdgOff { FONT-WEIGHT: bold; FONT-SIZE: 12px; CURSOR: default; COLOR: #ffffff; LINE-HEIGHT: 18px; FONT-FAMILY: Arial; BACKGROUND-COLOR: #006600; TEXT-ALIGN: center }
+TD.tabHdgOver { FONT-WEIGHT: bold; FONT-SIZE: 12px; CURSOR: pointer; COLOR: #ffffff; LINE-HEIGHT: 18px; FONT-FAMILY: Arial; BACKGROUND-COLOR: #990000; TEXT-ALIGN: center }
+TD.tabHdgOn { FONT-WEIGHT: bold; FONT-SIZE: 12px; CURSOR: default; COLOR: #ffffff; LINE-HEIGHT: 18px; FONT-FAMILY: Arial; BACKGROUND-COLOR: #009966; TEXT-ALIGN: center }
+
+/* 
+================================================================
+	Attempt at JQuery UI overrides
+================================================================ */
+#AddressFinder .textEntry {font-size:12px; font-weight:normal; vertical-align: top;}
+#AddressFinder .btnLabel {font-weight:bold; vertical-align: top; font-size: 11px;}
+#PrintCropYears .textEntry {font-size:12px; font-weight:normal; vertical-align: top;}
+#PrintCropYears .btnLabel {font-weight:bold; vertical-align: top; font-size: 11px;}
+#PrintCustom .textEntry {font-size:12px; font-weight:normal; vertical-align: top;}
+#PrintCustom .btnLabel {font-weight:bold; vertical-align: top; font-size: 11px;}
+
+
+
+

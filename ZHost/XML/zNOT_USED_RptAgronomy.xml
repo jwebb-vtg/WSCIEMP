@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<RptAgronomy xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<varietyList>
+		<Item2 field1="SOUTH" field2="Mixed" />
+		<Item2 field1="SOUTH" field2="Beta 1634N" />
+		<Item2 field1="SOUTH" field2="Beta 7310R" />
+		<Item2 field1="SOUTH" field2="Beta B7341R" />
+		<Item2 field1="SOUTH" field2="BTS 66RR50" />
+		<Item2 field1="SOUTH" field2="BTS 66RR60" />
+		<Item2 field1="SOUTH" field2="BTS 66RR70" />
+		<Item2 field1="SOUTH" field2="BTS 67RR05" />
+		<Item2 field1="SOUTH" field2="BTS 68RR12 TM" />
+		<Item2 field1="SOUTH" field2="BTS 69RR2N TM" />
+		<Item2 field1="SOUTH" field2="Crystal RR522" />
+		<Item2 field1="SOUTH" field2="Crystal RR533" />	
+		<Item2 field1="SOUTH" field2="Crystal RR561" />
+		<Item2 field1="SOUTH" field2="Crystal RR524 TM" />
+		<Item2 field1="SOUTH" field2="HM 1656Rz" />
+		<Item2 field1="SOUTH" field2="HM 7172Rz" />
+		<Item2 field1="SOUTH" field2="HM 9023RR" />
+		<Item2 field1="SOUTH" field2="HM 9024RR" />
+		<Item2 field1="SOUTH" field2="HM 9055RR" />
+		<Item2 field1="SOUTH" field2="HM 9027RR" />
+		<Item2 field1="SOUTH" field2="HM 9120RR TM" />
+		<Item2 field1="SOUTH" field2="HM 9139RR TM" />
+                <Item2 field1="SOUTH" field2="HM 9042RR" />
+		<Item2 field1="NORTH" field2="Mixed" />
+		<Item2 field1="NORTH" field2="BTS 36RR50" />
+		<Item2 field1="NORTH" field2="BTS 36RR60" />
+		<Item2 field1="NORTH" field2="BTS 36RR90" />
+		<Item2 field1="NORTH" field2="BTS 37RR22" />
+		<Item2 field1="NORTH" field2="BTS 38RR9N TM" />
+		<Item2 field1="NORTH" field2="Crystal RR714" />
+		<Item2 field1="NORTH" field2="Crystal RR747" />
+		<Item2 field1="NORTH" field2="HM 9023RR" />
+		<Item2 field1="NORTH" field2="HM 9025RR" />
+		<Item2 field1="NORTH" field2="HM 9036RR" />
+		<Item2 field1="NORTH" field2="HM 9120RR TM" />
+		<Item2 field1="NORTH" field2="HM 9124RR TM" />
+		</varietyList>
+		<factoryVarietyList>
+		<Item2 field1="2" field2="SOUTH" />		
+		<Item2 field1="3" field2="SOUTH" />		
+		<Item2 field1="4" field2="SOUTH" />		
+		<Item2 field1="5" field2="SOUTH" />		
+		<Item2 field1="6" field2="NORTH" />		
+		<Item2 field1="7" field2="NORTH" />		
+		<Item2 field1="8" field2="SOUTH" />		
+		<Item2 field1="9" field2="SOUTH" />		
+		<Item2 field1="20" field2="SOUTH" />
+	</factoryVarietyList>	
+</RptAgronomy>

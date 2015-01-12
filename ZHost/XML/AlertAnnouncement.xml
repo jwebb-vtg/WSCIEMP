@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Alerts>
+	<AlertItem>		
+		<UpdateDate></UpdateDate>
+		<Url>~/ZHost/AgNews/ShareOfferLetter.pdf</Url>
+		<Title>Share Offering 2007</Title>
+		<AbstractDesc>We are pleased to announce the offering of 15,000 additional patron preferred shares in the 
+		cooperative. This offer will help us better match our annual industry allocation needs
+		</AbstractDesc>
+		<IsActive>1</IsActive>
+	</AlertItem>			
+</Alerts>

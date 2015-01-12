@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterReportTemplate.master.cs" Inherits="WSCIEMP.MasterReportTemplate" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head runat="server" id="TmplHead">
+
+    <link type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/redmond/jquery-ui.css" rel="Stylesheet" />    
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.min.js"></script>
+    <title>WSCIEMP Web</title>
+
+    <script language="javascript" type="text/javascript">
+//<![CDATA[
+    
+    try {
+      document.execCommand("BackgroundImageCache", false, true);
+    } catch(err) {}
+
+    function PopReport(ctl) {
+
+        var nextPage = ctl.value;
+        window.location = nextPage;
+    }
+    
+    function DoOnLoad() {
+
+        var pdfCtl = $$('txtPDF', $('#domain'));        
+        if (pdfCtl != null && pdfCtl.val().length > 0) {
+
+            var pdfFileLocation = pdfCtl.val();
+            $$('txtLastPDF', $('#domain')).val(pdfFileLocation);
+            
+            pdfCtl.val('');
+            var popWidth = screen.width - 150;
+            var popHeight = screen.height - 150;
+
+            var win = window.open(pdfFileLocation, "_blank",
+				"status=0,toolbar=1,location=0,top=100,left=100,menubar=1,directories=0,resizable=1,scrollbars=1,width=" + popWidth + ",height=" + popHeight);
+        }
+    }
+    
+//]]>    
+    </script>
+
+</head>
+<body id="MasterReportBody" onload="DoOnLoad();">
+    <form id="MainForm" runat="server">
+    <div id="wrapper">
+        <div id="headerR1">
+            <asp:AdRotator ID="adMainBanner" SkinID="adrPrimary"  runat="server" Target="_self" />
+        </div>
+        <div id="headerR2">
+            <asp:SiteMapDataSource ID="smdMenuRoot" runat="server" StartingNodeOffset="0" ShowStartingNode="False" />
+            <asp:SiteMapDataSource ID="smdUpRoot" runat="server" ShowStartingNode="False" StartingNodeOffset="2" />
+            <asp:Menu ID="TopMenuBar" runat="server" CssClass="headerMenuLink" DataSourceID="smdMenuRoot" 
+                Orientation="Horizontal" SkipLinkText="" StaticDisplayLevels="1" MaximumDynamicDisplayLevels="2" 
+                DynamicHorizontalOffset="1" DynamicMenuItemStyle-HorizontalPadding="5" StaticEnableDefaultPopOutImage="false"
+                StaticMenuItemStyle-CssClass="mnuTopStaticMenuItemStyle" StaticHoverStyle-CssClass="mnuTopStaticHoverStyle"
+                StaticSelectedStyle-CssClass="mnuTopStaticSelectedStyle" DynamicMenuItemStyle-CssClass="mnuTopDynamicMenuStyle"
+                DynamicHoverStyle-CssClass="mnuTopDynamicHoverStyle" 
+                OnPreRender="CheckSelectedNode" />
+        </div>
+        <div id="breadcrumb" runat="server" class="breadcrumbHolder">
+            <asp:SiteMapPath ID="TopBreadCrumb" runat="server" CurrentNodeStyle-CssClass="crumbCurrentNodeStyle"
+                NodeStyle-CssClass="crumbNodeStyle" PathSeparatorStyle-CssClass="crumbPathSeperatorStyle" />
+        </div>
+        <div id="dateStamp">
+            <asp:Label ID="lblDateStamp" runat="server" Text=""></asp:Label>
+        </div>
+        <br />
+        <div id="MainContentCenter">
+            <table style="width: 100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="width: 10px;">
+                        &nbsp;
+                    </td>
+                    <td>
+                        <div class="titleTable">
+                            <div class="PageTitle">
+                                <asp:ContentPlaceHolder ID="PageTitleHolder" runat="server">Western Sugar Cooperative Web Application
+                                </asp:ContentPlaceHolder>
+                            </div>
+                            <br style="line-height: 7px;" />
+                            <div style="margin: 0px; text-align: center">
+                                <div class="WarningOff" id="divWarning" runat="server">
+                                </div>
+                            </div>
+                        </div>
+                        <table class="wideTable" style="vertical-align: bottom; border-bottom: black 1px solid" cellspacing="0" cellpadding="0" border="0">
+                            <tr style="height: 40px">
+                                <td style="vertical-align: bottom; width: 1%">
+                                    &nbsp;
+                                </td>
+                                <td style="vertical-align: bottom; width: 17%">
+                                    <asp:Label ID="lblCropYearTop" runat="server" CssClass="LabelText">Crop Year:</asp:Label>                                    
+                                    <br />
+                                    <asp:DropDownList ID="ddlCropYear" CssClass="ctlWidth60" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="ddlCropYear_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="LabelText" style="vertical-align: bottom; width: 35%">
+                                    Report:
+                                    <br />
+                                    <asp:DropDownList ID="ddlReports" runat="server" CssClass="LgList">
+                                    </asp:DropDownList>
+                                </td>
+                                <td style="vertical-align: bottom; width: 45%">
+                                    <asp:Button ID="btnPrint" runat="server" Text="Print" CssClass="BtnMed" 
+                                        onclick="btnPrint_Click"></asp:Button>
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
+                        </table>
+                        <div class="DisplayOff" id="domain">
+                            <asp:TextBox ID="txtPDF" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtLastPDF" runat="server"></asp:TextBox>
+                        </div>                                                
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentCenter" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentBottom" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <br style="line-height: 5px;" />
+            <span>&nbsp;7555 E. Hampden Ave., Suite 600, Denver, CO 80231&nbsp;</span> <span
+                class="spacer">|</span> <span>&nbsp;Phone 303.830.3939</span><br />
+            <span>&copy;&nbsp;<asp:Literal ID="litYear" runat="server"></asp:Literal>
+                The Western Sugar Cooperative. All Rights Reserved.</span>
+            <asp:HiddenField ID="txtAction" runat="server" /> 
+        </div>
+    </div>
+    </form>
+</body>
+</html>

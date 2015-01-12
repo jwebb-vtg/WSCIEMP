@@ -1,0 +1,219 @@
+﻿body {
+    font-size:100%;
+    line-height:1.125em;
+    padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; text-align: center; background-color: #99cc99; 
+}
+
+body, div, p, th, td, li, dd	{
+	font-family: Verdana, Lucida, Arial, Helvetica, sans-serif;
+	font-size: 0.88em;
+}
+
+#wrapper {
+	text-align: left; margin: 0px auto; padding: 0px; border:0; background: #ffffcc;
+	width: 970px;		/* Examine at 1024 X 768 before making a change. Wrapper.width = MainContentLeft.width + MainContentCenter.width */
+}
+
+#headerR1 {
+	margin: 0 0 0 0; padding: 0px; border:0; height: 61px; background: #ffffcc; background: url("images/Header_WSC_Sweetner3.gif"); 
+}
+#headerR2 {
+	margin: 0 0 1px 0; background-color: #ffffcc;
+}
+
+#MainContentCenter { 
+	margin: 0; float: left; width: 970px; background: #ffffff; 
+	font-family: Verdana, Lucida, Arial, Helvetica, sans-serif;
+	font-size: 0.88em;
+	height: 1% /* Holly hack for Peekaboo Bug */
+}
+#MainContentCenter>div 
+{
+	padding-left: 5px;	
+}
+
+table.titleTable
+{
+	width: 970px;
+	margin: 0;
+	vertical-align: top;
+}
+
+table.stdTableLayout
+{
+	width: 100%;	
+}
+
+#footer {
+	clear: both; background: #99cc99; line-height: 16px; vertical-align: top; text-align: center; 
+}
+
+td.PageTitle
+{
+	margin:0;
+	padding:0 0 0 0;
+	height: 25px;
+	vertical-align: bottom;
+	color: #990000;
+	line-height: 30px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+span.spacer { COLOR: #FFFFFF; }
+
+.footerMenuLink
+{font-family: Arial, Helvetica, sans-serif; font-size: 1.20em; font-weight: bold; text-transform: uppercase;	}
+
+.headerMenuLink
+{font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #ffffff; width: 970px; line-height: 18px; text-align: center;}
+.mnuTopStaticMenuItemStyle
+{background-color: #006600; color: #ffffff; font-size: 1.25em; padding-right: 30px;}
+.mnuTopStaticHoverStyle
+{background-color: #990000; color: #ffffff; font-size: 1.25em; padding-right: 30px;}
+.mnuTopStaticSelectedStyle
+{background-color: #009966; color: #ffffff; font-size: 1.25em;}
+
+.mnuTopDynamicMenuStyle
+{background-color: #006600; color: #ffffff; width: 195px; font-size: 1.40em; height: 18px; line-height: 18px; text-align: left; }
+.mnuTopDynamicHoverStyle
+{background-color: #990000; color: #ffffff; border: dashed 1px #99ffff;	 width: 195px; font-size: 1.40em; height: 18px; line-height: 18px; text-align: left;}
+
+.leftMenuLink
+{font-family: Arial, Helvetica, sans-serif; font-size: 1.30em; color: #000000; width: 140px; line-height: 20px; text-align: left;}
+.mnuLeftStaticMenuItemStyle
+{color: #000000; }
+.mnuLeftStaticHoverStyle
+{color: #ffffff; background-color: #990000;}
+.mnuLeftStaticSelectedStyle
+{background-color: #ffcc66;}
+.mnuLeftDynamicMenuStyle
+{}
+.mnuLeftDynamicHoverStyle
+{}
+
+.LabelText 	
+{font-weight:bold;vertical-align: top;font-size: 1.2em;}	
+.ButtonText 	
+{font-size:1.6em; font-weight:normal; vertical-align: top;}
+
+.ctlWidth90
+{
+	width: 110px;
+	font-size: 1.2em;	
+}
+
+.grdColor { width: 780px; }
+table.grdColor td 
+{ font-size: 1.2em;}
+table.grdColor th
+{ font-size: 1.2em;}
+/* 
+================================================================
+Content control layout for two columns of data entry controls 
+================================================================ */
+table.DataBlock2C 
+{
+	font-size:1.2em;
+	width: 850px;
+}
+table.DataBlock2C > tbody > tr {height: 22px;}
+table.DataBlock2C > tbody > tr:first-child > td:first-child
+{
+	text-decoration: underline;	
+	width: 250px;
+}
+table.DataBlock2C input[type='text'] {width: 300px;}
+table.DataBlock2C select {width: 300px;}
+
+/* 
+================================================================
+Content control layout for three columns of data entry controls 
+================================================================ */
+table.DataBlock3C 
+{
+	font-size:1.2em;
+	width: 870px;
+}
+table.DataBlock3C > tbody > tr {height: 22px;}
+table.DataBlock3C > tbody > tr:first-child > td:first-child
+{
+	font-weight: bold;	
+	width: 260px;
+}
+table.DataBlock3C > tbody > tr:first-child > td:first-child + td
+{
+	font-weight: bold;	
+	width: 260px;
+}
+table.DataBlock3C > tbody > tr:first-child > td:first-child + td + td
+{
+	font-weight: bold;	
+	width: 260px;
+}
+table.DataBlock3C input[type='text'] {width: 190px;}
+table.DataBlock3C select {width: 190px;}
+
+/* 
+================================================================
+	Highlights 
+================================================================ */
+.highlight
+{
+	background-color: #fefbd2;
+	color: #000080;		
+}
+.highlightPlus
+{
+	font-size: 11px;
+	background-color: #ffff33;
+	color: #000080;		
+}
+
+/* 
+================================================================
+	Show/Hide Blocks and Warnings
+================================================================ */
+.DisplayOff
+{
+	display: none;
+	visibility: hidden;
+}
+.DisplayOn
+{
+	display: block;
+	visibility: visible;
+}
+.WarningOn
+{
+	font-size: 12px;
+	width: 100%;
+	color: red;
+	text-align: center;
+	visibility: visible;
+	display: block;
+}
+.WarningOff
+{
+	visibility: hidden;
+	display: none;
+}
+
+.WarningLarge
+{
+	font-size: 16px;
+	width: 100%;
+	color: red;
+	font-family: Arial, Verdana, Helvetica;
+	font-weight: bold;
+	text-align: center;
+	visibility: visible;
+}
+
+.ErrorHeading
+{
+	font-size: 14px;
+	font-weight: bold; 
+	color: #b0232a; 
+	font-family: Arial, Verdana, Helvetica;
+}

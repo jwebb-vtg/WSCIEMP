@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rehaul>
+	<FactoryList>
+		<Factory factoryID="2" factoryName="Billings">
+			<StationList>
+				<Station stationNumber="1" stationName="Billings Factory" />
+				<Station stationNumber="2" stationName="Huntley" />
+				<Station stationNumber="4" stationName="Pompeys Pillar" />
+				<Station stationNumber="5" stationName="Custer" />
+				<Station stationNumber="6" stationName="Hysham" />
+				<Station stationNumber="7" stationName="Maudru" />
+				<Station stationNumber="8" stationName="Hardin" />
+				<Station stationNumber="9" stationName="North Valley" />
+				<Station stationNumber="10" stationName="St. Xavier" />
+				<Station stationNumber="12" stationName="Mossmain" />
+				<Station stationNumber="15" stationName="Leslie" />
+				<Station stationNumber="16" stationName="Bridger" />
+				<Station stationNumber="71" stationName="Lovell Factory" />
+				<Station stationNumber="73" stationName="Starr" />
+				<Station stationNumber="74" stationName="West Powell" />
+				<Station stationNumber="75" stationName="O'Donnell" />
+				<Station stationNumber="76" stationName="Willwood" />
+				<Station stationNumber="77" stationName="Heart Mountain" />
+			</StationList>
+		</Factory>
+		<Factory factoryID="3" factoryName="Ft Morgan">
+			<StationList>
+				<Station stationNumber="22" stationName="Kimball" />
+				<Station stationNumber="54" stationName="Ogallala" />
+				<Station stationNumber="56" stationName="Big Springs" />
+				<Station stationNumber="57" stationName="Holyoke West" />
+				<Station stationNumber="58" stationName="Holyoke East" />
+				<Station stationNumber="80" stationName="Greeley Factory" />
+				<Station stationNumber="81" stationName="Windsor" />
+				<Station stationNumber="82" stationName="Ault" />
+				<Station stationNumber="83" stationName="Wellington" />
+				<Station stationNumber="84" stationName="Kuner" />
+				<Station stationNumber="85" stationName="Krauss" />
+				<Station stationNumber="88" stationName="St. Vrain" />
+				<Station stationNumber="90" stationName="Fort Morgan Factory" />
+				<Station stationNumber="91" stationName="Wiggins" />
+				<Station stationNumber="94" stationName="Sterling" />
+				<Station stationNumber="96" stationName="Yuma West" />
+				<Station stationNumber="97" stationName="Yuma East" />
+				<Station stationNumber="99" stationName="Kirk" />
+			</StationList>
+		</Factory>
+		<Factory factoryID="5" factoryName="Lovell">
+			<StationList>
+				<Station stationNumber="2" stationName="Huntley" />
+				<Station stationNumber="12" stationName="Mossmain" />
+				<Station stationNumber="15" stationName="Leslie" />
+				<Station stationNumber="16" stationName="Bridger" />
+				<Station stationNumber="71" stationName="Lovell Factory" />
+				<Station stationNumber="73" stationName="Starr" />
+				<Station stationNumber="74" stationName="West Powell" />
+				<Station stationNumber="75" stationName="O'Donnell" />
+				<Station stationNumber="76" stationName="Willwood" />
+				<Station stationNumber="77" stationName="Heart Mountain" />
+				<Station stationNumber="79" stationName="Emblem" />
+			</StationList>
+		</Factory>
+		<Factory factoryID="6" factoryName="Scottsbluff">
+			<StationList>
+				<Station stationNumber="20" stationName="Scottsbluff Factory" />
+				<Station stationNumber="22" stationName="Kimball" />
+				<Station stationNumber="27" stationName="Mitchell South" />
+				<Station stationNumber="29" stationName="Hemingford" />
+				<Station stationNumber="30" stationName="Torrington Factory" />
+				<Station stationNumber="37" stationName="Wheatland" />
+				<Station stationNumber="39" stationName="Bayard Factory" />
+				<Station stationNumber="45" stationName="Ginn" />
+				<Station stationNumber="47" stationName="Nida" />
+				<Station stationNumber="48" stationName="Mirage Flats" />
+				<Station stationNumber="54" stationName="Ogallala" />
+				<Station stationNumber="56" stationName="Big Springs" />
+				<Station stationNumber="57" stationName="Holyoke West" />
+				<Station stationNumber="58" stationName="Holyoke East" />
+				<Station stationNumber="82" stationName="Ault" />
+				<Station stationNumber="83" stationName="Wellington" />
+				<Station stationNumber="94" stationName="Sterling" />
+			</StationList>
+		</Factory>
+		<Factory factoryID="7" factoryName="Torrington">
+			<StationList>
+				<Station stationNumber="20" stationName="Scottsbluff Factory" />
+				<Station stationNumber="22" stationName="Kimball" />
+				<Station stationNumber="27" stationName="Mitchell South" />
+				<Station stationNumber="29" stationName="Hemingford" />
+				<Station stationNumber="30" stationName="Torrington Factory" />
+				<Station stationNumber="37" stationName="Wheatland" />
+				<Station stationNumber="39" stationName="Bayard Factory" />
+				<Station stationNumber="45" stationName="Ginn" />
+				<Station stationNumber="47" stationName="Nida" />
+				<Station stationNumber="48" stationName="Mirage Flats" />
+				<Station stationNumber="54" stationName="Ogallala" />
+				<Station stationNumber="56" stationName="Big Springs" />
+				<Station stationNumber="57" stationName="Holyoke West" />
+				<Station stationNumber="58" stationName="Holyoke East" />
+				<Station stationNumber="82" stationName="Ault" />
+				<Station stationNumber="83" stationName="Wellington" />
+			</StationList>
+		</Factory>
+	</FactoryList>
+</Rehaul>

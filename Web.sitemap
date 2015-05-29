@@ -23,9 +23,11 @@
 						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
 			<siteMapNode url="~/Admin/SendFile.aspx" title="Send File" description="Broadcast email file attachments to groups of members or shareholders."
 						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN,WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager" />
-			<siteMapNode url="~/Admin/UserMaintenance.aspx" title="User Maintenance" description="update an Existing user's display name or phone number. " 
+			<siteMapNode url="~/Admin/UserMaintenance.aspx" title="User Maintenance" description="update an Existing user's display name or phone number." 
 						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
-		</siteMapNode>
+      <siteMapNode url="~/Admin/PACAdministration.aspx" title="PAC Administration" description="PAC Maintenance."
+						 roles="WSC AG ADMIN,WESTERNSUGAR\WSC AG ADMIN" />
+    </siteMapNode>
 		<siteMapNode url="~/BeetAccounting/BeetAccountingHome.aspx" title="BeetAccounting" description="" 
 					 roles="WSC AG SRS Admin,WESTERNSUGAR\WSC AG SRS Admin,WSC AG SRS Manager,WESTERNSUGAR\WSC AG SRS Manager,WSC AG Beet Clerk,WESTERNSUGAR\WSC AG Beet Clerk,WSC AG Read-Only,WESTERNSUGAR\WSC AG Read-Only,WSC AG Admin,WESTERNSUGAR\WSC AG Admin,WSC AG Agriculturist,WESTERNSUGAR\WSC AG Agriculturist">
 			<siteMapNode url="~/BeetAccounting/AgFieldMtn/AgFieldMtnHome.aspx" title="Ag Field Maintenance" description="Contract Entry, Seed, Chemical, and Addresses"

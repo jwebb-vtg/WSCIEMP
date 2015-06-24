@@ -7,7 +7,7 @@ namespace WSCData {
         public ListAddressItem() { }
 
         public ListAddressItem(int addressID, int memberID, string shid, bool isSubscriber, string firstName, string lastName, string busName, string taxID, string adrLine1, string adrLine2, string cityName, 
-            string stateName, string postalCode, string phoneNo, string email) {
+            string stateName, string postalCode, string phoneNo, string email, int addressType) {
 
             AddressID = addressID;
             MemberID = memberID;
@@ -24,6 +24,7 @@ namespace WSCData {
             PostalCode = postalCode;
             PhoneNo = phoneNo;
             Email = email;
+            AddressType = addressType;
         }
 
         public int AddressID { get; set; }
@@ -41,5 +42,6 @@ namespace WSCData {
         public string PostalCode { get; set; }
         public string PhoneNo { get; set; }
         public string Email { get; set; }
+        public int AddressType { get; set; }
     }
 }

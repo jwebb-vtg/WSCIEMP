@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\PACAdministration.aspx" />
     <Content Include="Admin\PassthroughManagement.aspx" />
     <Content Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx" />
     <Content Include="Reports\HReports\BeetPaymentBreakdown.aspx" />
@@ -84,6 +85,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\PACAdministration.aspx.cs">
+      <DependentUpon>PACAdministration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PACAdministration.aspx.designer.cs">
+      <DependentUpon>PACAdministration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PassthroughManagement.aspx.cs">
       <DependentUpon>PassthroughManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,6 +99,11 @@
     <Compile Include="Admin\PassthroughManagement.aspx.designer.cs">
       <DependentUpon>PassthroughManagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\WSCData\BeetDataContract.cs" />
+    <Compile Include="App_Code\WSCData\Contract.cs" />
+    <Compile Include="App_Code\WSCData\Individual.cs" />
+    <Compile Include="App_Code\WSCData\PACAgreement.cs" />
+    <Compile Include="App_Code\WSCData\PACData.cs" />
     <Compile Include="App_Code\WSCReports\rptBeetPaymentBreakdown.cs" />
     <Compile Include="App_Code\WSCReports\rptNoticeOfPassthrough.cs" />
     <Compile Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx.cs">
@@ -1002,6 +1015,7 @@
     <Content Include="SHS\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\WSCData\App_LocalResources\" />
     <Folder Include="App_Themes\NoNavigation\images\" />
     <Folder Include="App_Themes\ThemeA_1024\images\" />
     <Folder Include="PDF\" />
@@ -1065,11 +1079,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2575</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WSCIEMP</IISUrl>
+          <IISUrl>http://localhost/WSCIEMP_LEE</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

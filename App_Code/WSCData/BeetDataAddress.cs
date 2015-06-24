@@ -49,6 +49,7 @@ namespace WSCData {
                             int iPostalCode = dr.GetOrdinal("adr_postal_code");
                             int iPhoneNo = dr.GetOrdinal("adr_phone");
                             int iEmail = dr.GetOrdinal("adr_email");
+                            int iAddressType = dr.GetOrdinal("adr_address_type_id");
 
                             while (dr.Read()) {
 
@@ -56,7 +57,7 @@ namespace WSCData {
                                     dr.GetBoolean(iIsSubscriber), dr.GetString(iFName),
                                     dr.GetString(iLName), dr.GetString(iBusName), dr.GetString(iTaxID),
                                     dr.GetString(iAdrLine1), dr.GetString(iAdrLine2), dr.GetString(iCityName), dr.GetString(iStateName),
-                                    dr.GetString(iPostalCode), dr.GetString(iPhoneNo), dr.GetString(iEmail)));
+                                    dr.GetString(iPostalCode), dr.GetString(iPhoneNo), dr.GetString(iEmail), dr.GetInt32(iAddressType)));
                             }
                         }
                     }
@@ -117,6 +118,7 @@ namespace WSCData {
                             int iPostalCode = dr.GetOrdinal("adr_postal_code");
                             int iPhoneNo = dr.GetOrdinal("adr_phone");
                             int iEmail = dr.GetOrdinal("adr_email");
+                            int iAddressType = dr.GetOrdinal("adr_address_type_id");
 
                             while (dr.Read()) {
 
@@ -124,7 +126,7 @@ namespace WSCData {
                                     dr.GetBoolean(iIsSubscriber), dr.GetString(iFName),
                                     dr.GetString(iLName), dr.GetString(iBusName), dr.GetString(iTaxID),
                                     dr.GetString(iAdrLine1), dr.GetString(iAdrLine2), dr.GetString(iCityName), dr.GetString(iStateName),
-                                    dr.GetString(iPostalCode), dr.GetString(iPhoneNo), dr.GetString(iEmail)));
+                                    dr.GetString(iPostalCode), dr.GetString(iPhoneNo), dr.GetString(iEmail), dr.GetInt32(iAddressType)));
                             }
                         }
                     }

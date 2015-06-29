@@ -71,6 +71,7 @@
     <Content Include="Admin\PACAdministration.aspx" />
     <Content Include="Admin\PassthroughManagement.aspx" />
     <Content Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx" />
+    <Content Include="PDF\Downloader.aspx" />
     <Content Include="Reports\HReports\BeetPaymentBreakdown.aspx" />
     <Content Include="Reports\MReports\NoticeOfPassthrough.aspx" />
     <Content Include="SHS\SeedVariety.aspx" />
@@ -112,6 +113,14 @@
     </Compile>
     <Compile Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx.designer.cs">
       <DependentUpon>BeetExcessPaymentStation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PDFHelper.cs" />
+    <Compile Include="PDF\Downloader.aspx.cs">
+      <DependentUpon>Downloader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDF\Downloader.aspx.designer.cs">
+      <DependentUpon>Downloader.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\HReports\BeetPaymentBreakdown.aspx.cs">
       <DependentUpon>BeetPaymentBreakdown.aspx</DependentUpon>
@@ -1018,7 +1027,6 @@
     <Folder Include="App_Code\WSCData\App_LocalResources\" />
     <Folder Include="App_Themes\NoNavigation\images\" />
     <Folder Include="App_Themes\ThemeA_1024\images\" />
-    <Folder Include="PDF\" />
     <Folder Include="ZHost\" />
   </ItemGroup>
   <ItemGroup>
@@ -1066,6 +1074,17 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="PDF\2015 Non-Shareholder Agreement.doc" />
+    <None Include="PDF\2015 PAC Corporate PAC dues  for new Corps signing up.doc" />
+    <None Include="PDF\2015 PAC dues form non corporations new one each year.doc" />
+    <None Include="PDF\2015.pdf" />
+    <None Include="PDF\2015 Shareholder Agreement.doc" />
+    <None Include="PDF\2015 Temporary Transfer Form Blank.DOC" />
+    <None Include="PDF\83_EquityStatement_1.pdf" />
+    <None Include="PDF\83_EquityStatement_2.pdf" />
+    <None Include="PDF\Credit Contract.doc" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -1079,16 +1098,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2575</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WSCIEMP_LEE</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

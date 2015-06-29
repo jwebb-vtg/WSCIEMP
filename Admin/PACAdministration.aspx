@@ -39,7 +39,7 @@
         }
 
         function downloadContracts() {
-            window.location = '/WSCIEMP_LEE/PDF/2015 Shareholder Agreement.doc';
+            window.location = '/PDF/Downloader.aspx';
         }
 
         function parseTable() {

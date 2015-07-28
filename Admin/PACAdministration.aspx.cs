@@ -2,11 +2,14 @@
 using System.Linq;
 using System.Web;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using WSCData;
+using WSCIEMP.Common;
+using System.Globalization;
 
 namespace WSCIEMP.Admin
 {
@@ -135,7 +138,6 @@ namespace WSCIEMP.Admin
         {
             int crop_year = Convert.ToInt16(ddlCropYear.Text);
             string shid = txtSHID.Text;
-            downloadContracts.Style["display"] = "none";
 
             List<Contract> contractList = BeetDataContract.GetContracts(shid, crop_year, 0);
 
@@ -171,7 +173,6 @@ namespace WSCIEMP.Admin
 
             if (IndTable.Count > 0)
             {
-                downloadContracts.Style["display"] = "static";
 
                 TableHeaderRow headerRow = new TableHeaderRow();
 
@@ -333,6 +334,7 @@ namespace WSCIEMP.Admin
                             lblAddressType.Text = "Other";
                             break;
                     }
+                    ToggleContractDownloadButton();
                 }
 
                 uplShid.Update();
@@ -379,6 +381,7 @@ namespace WSCIEMP.Admin
                         lblAddressType.Text = "Other";
                         break;
                 }
+                ToggleContractDownloadButton();
                 
                 uplShid.Update();
 
@@ -603,5 +606,119 @@ namespace WSCIEMP.Admin
         }
 
         protected void Individual_SelectedIndexChanged(object sender, EventArgs e) { }
+
+        protected void btnDownloadPACDuesCorp_Click(object server, EventArgs e)
+        {
+            /*
+             CORPORATION NAME
+            LastNameFirstName
+            Address
+            PHONE
+            Dated
+            Individual
+            WesternSugarCoopBy
+            WesternSugarCoopIts
+            Individual1
+            IndividualPercentage1
+            Individual2
+            IndividualPercental2
+            Individual3
+            IndividualPercentage3
+            Individual4
+            IndividualPercentage4
+            TOTAL
+            100
+            Dated_2
+            CorporationName
+            AssignorCorporateShareholderBy
+            undefined_2
+            AssignorCorporateShareholderIts
+            AssigneeIndividuals1
+            AssigneeIndividuals2
+            AssigneeIndividuals3
+            TwoDigitCents
+            CentsPerTonDevlivered
+             */
+
+            var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
+            var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
+            var i = new Individual();
+            var signerFirstName = inds[0].FullName.Split(" ".ToCharArray())[0];
+            var signerLastName = inds[0].FullName.Split(" ".ToCharArray())[1];
+
+            var qs = new NameValueCollection();
+            var date = DateTime.Now;
+            var mfi = new DateTimeFormatInfo();
+            var strMonthName = mfi.GetMonthName(date.Month).ToString();
+
+            qs.Add("Filename", "PACDuesCorp");
+            qs.Add("CORPORATION NAME", Server.UrlEncode(lblBusName.Text));
+            qs.Add("CorporationName", Server.UrlEncode(lblBusName.Text));
+            qs.Add("LastNameFirstName", signerLastName + ", " + signerFirstName);
+            qs.Add("Dated", DateTime.Now.ToString("MM/dd/yyyy"));
+            qs.Add("CentsPerTonDevlivered", pACContibution.Text);
+            qs.Add("TwoDigitCents", (pACContibution.Text.Length == 1) ? "0" + pACContibution.Text : pACContibution.Text);
+
+            try
+            {
+                qs.Add("Individual1", (PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null)[0].FullName));
+                qs.Add("IndividualPercentage1", pac.Individuals[0].Percentage.ToString());
+                qs.Add("Individual2", (PACData.GetPACIndividuals(pac.Individuals[1].IndividualID, null)[0].FullName));
+                qs.Add("IndividualPercentage2", pac.Individuals[1].Percentage.ToString());
+                qs.Add("Individual3", (PACData.GetPACIndividuals(pac.Individuals[2].IndividualID, null)[0].FullName));
+                qs.Add("IndividualPercentage3", pac.Individuals[2].Percentage.ToString());
+                qs.Add("Individual4", (PACData.GetPACIndividuals(pac.Individuals[3].IndividualID, null)[0].FullName));
+                qs.Add("IndividualPercentage4", pac.Individuals[3].Percentage.ToString());
+
+            }
+            catch
+            {
+            }
+
+            Response.Redirect("~/Downloads/Downloader.aspx" + qs.ToQueryString());
+        }
+
+        protected void btnDownloadPACDuesNonCorp_Click(object server, EventArgs e)
+        {
+            /*
+             *  ContractNumber1
+                ContractNumber2
+                SumOfMoneyPerTon
+                CropYear1
+                WithdrawalDate
+                CurrentDayMonth
+                Shareholder Signature
+                PrintLandOwnerName
+                PrintShareholderName
+                ShareholderAddress
+                Director WSCPAC
+                Company Representative
+                CurrentTwoDigitYear*/
+
+            var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
+            var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
+            var i = new Individual();
+
+            var qs = new NameValueCollection();
+            var date = DateTime.Now;
+            var mfi = new DateTimeFormatInfo();
+            var strMonthName = mfi.GetMonthName(date.Month).ToString();
+
+            qs.Add("CurrentTwoDigitYear", date.ToString("yy"));
+            qs.Add("CurrentDayMonth", mfi.GetMonthName(date.Month).ToString() + " " + date.Day);
+            qs.Add("SumOfMoneyPerTon", pACContibution.Text);
+            qs.Add("CropYear1", DateTime.Now.Year.ToString());
+            qs.Add("SomeBullshit", DateTime.Now.Year.ToString());
+            qs.Add("PrintShareholderName", ((Individual)inds[0]).FullName);
+            qs.Add("Filename", "PACDuesNonCorp");
+
+            Response.Redirect("~/Downloads/Downloader.aspx" + qs.ToQueryString());
+        }
+
+        private void ToggleContractDownloadButton()
+        {
+            btnDownloadPACDuesCorp.Visible = (lblAddressType.Text == "Corporation");
+            btnDownloadPACDuesNonCorp.Visible = (lblAddressType.Text != "Corporation");
+        }
     }
 }

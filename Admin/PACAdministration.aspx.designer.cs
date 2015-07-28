@@ -157,13 +157,22 @@ namespace WSCIEMP.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl PACDetailsActions;
         
         /// <summary>
-        /// downloadContracts control.
+        /// btnDownloadPACDuesNonCorp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton downloadContracts;
+        protected global::System.Web.UI.WebControls.Button btnDownloadPACDuesNonCorp;
+        
+        /// <summary>
+        /// btnDownloadPACDuesCorp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDownloadPACDuesCorp;
         
         /// <summary>
         /// btnSave control.

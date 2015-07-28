@@ -38,10 +38,6 @@
             }
         }
 
-        function downloadContracts() {
-            window.location = '/PDF/Downloader.aspx';
-        }
-
         function parseTable() {
             try {
                 var $inputs = $('#<%=indTable.ClientID%> :input');
@@ -209,8 +205,9 @@
                                 <div id="PACDetailsActions" runat="server">
                                     <br />
                                         <div style="text-align: center;">
-                                            <input type="button" id="showInd" class="LabelText" onclick="parseTable(); showDialog('PACIndividuals');" value="Add Singer" />&nbsp;
-                                            <input type="button" id="downloadContracts" class="LabelText" runat="server" onclick="downloadContracts();" value="Download Contracts" style="display: none;" />
+                                            <input type="button" id="showInd" class="LabelText" onclick="parseTable(); showDialog('PACIndividuals');" value="Add Signer" />&nbsp;
+                                            <asp:Button runat="server" ID="btnDownloadPACDuesNonCorp" OnClick="btnDownloadPACDuesNonCorp_Click" Text="Download PAC Agreement Form" Visible="false" />
+                                            <asp:Button runat="server" ID="btnDownloadPACDuesCorp" OnClick="btnDownloadPACDuesCorp_Click" Text="Download PAC Agreement Form" Visible="false" />
                                         </div>
                                     <br />
                                     <div style="text-align: right; padding-right: 30px;">

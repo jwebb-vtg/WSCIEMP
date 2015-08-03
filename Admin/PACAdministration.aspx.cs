@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using WSCData;
 using WSCIEMP.Common;
 using System.Globalization;
+using System.Text;
 
 namespace WSCIEMP.Admin
 {
@@ -17,6 +18,7 @@ namespace WSCIEMP.Admin
 
         private const string MOD_NAME = "Admin.PACAdministration.";
         private const string BLANK_CELL = "&nbsp;";
+        public string getUserName { get { return System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString().Split(@"\".ToCharArray())[1]; } }
 
         private string MySHID
         {
@@ -640,6 +642,16 @@ namespace WSCIEMP.Admin
             CentsPerTonDevlivered
              */
 
+            pacMessages.InnerText = "";
+
+            string searchTerm = txtSHID.Text.Trim();
+            int searchType = 1;
+            int cropYear = Convert.ToInt16(ddlCropYear.Text);
+            List<ListAddressItem> addrList = BeetDataAddress.AddressFindByTerm(searchTerm, cropYear, searchType);
+            var address = new StringBuilder();
+            address.AppendFormat("{0}, {1}, {2}, {3}", addrList[0].AdrLine1, addrList[0].AdrLine2, addrList[0].CityName, addrList[0].StateName);
+            var phone = addrList[0].PhoneNo ?? "";
+
             var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
             var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
             var i = new Individual();
@@ -658,6 +670,10 @@ namespace WSCIEMP.Admin
             qs.Add("Dated", DateTime.Now.ToString("MM/dd/yyyy"));
             qs.Add("CentsPerTonDevlivered", pACContibution.Text);
             qs.Add("TwoDigitCents", (pACContibution.Text.Length == 1) ? "0" + pACContibution.Text : pACContibution.Text);
+            qs.Add("Address", address.ToString());
+            qs.Add("PHONE", phone);
+            qs.Add("Text1", DateTime.Now.Year.ToString());
+            qs.Add("Year2", DateTime.Now.Year.ToString());
 
             try
             {

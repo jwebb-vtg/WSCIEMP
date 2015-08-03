@@ -5,6 +5,8 @@
     PAC Administrator
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentCenter" runat="server">
+    <script type="text/javascript" src="/Script/DataTables/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Script/DataTables/css/jquery.dataTables.css" />
 
     <script type="text/javascript">
 
@@ -133,14 +135,73 @@
                     $(this).parent().appendTo("form");
                 }
             });
+
+            $('#dsInstructions').dialog({
+                height: 500,
+                width: 700,
+                title: "Download the Agreement Form",
+                modal: true,
+                draggable: true,
+                resizable: true,
+                autoOpen: false,
+                open: function (type, data) {
+                    $(this).parent().appendTo("form");
+                }
+            });
+
+            $('#dsInstructionsLink').click(function () {
+                $('#dsInstructions').dialog('open');
+                return false;
+            });
+
+            $('#dsNavLinks a').click(function () {
+                var path = '/img/docusign/' + $(this).attr('href') + '.png';
+                $('.dsImage').attr('src', path);
+                $('#dsNavLinks a').removeClass('selected');
+                $(this).addClass('selected');
+                return false;
+            });
+            var dsCurrentStep = 1;
+            $('#dsPrev').click(function () {
+                if (dsCurrentStep > 1) {
+                    dsCurrentStep--;
+                    $('a[href=' + (dsCurrentStep) + ']').trigger('click');
+                }
+                return false;
+            });
+            $('#dsNext').click(function () {
+                if (dsCurrentStep < 9) {
+                    dsCurrentStep++;
+                    $('a[href=' + (dsCurrentStep) + ']').trigger('click');
+                }
+                return false;
+            });
         });
 
     </script>
+
+    <style>
+        .btnDownload {float: left;}
+        #dsInstructionsLink {float: left; display: block; margin-left: 10px;}
+        
+         .dsImage                { width: 470px; border: 1px solid #ddd; border-radius: 5px;}
+        #dsLogo                 { width: 150px}
+        .dsNav ol               { font-size: 12px; margin-left:-20px;}
+        .dsNav ol li            { margin-top: 15px;  }
+        .dsNav ol li a          { font-size: 12px; color: Blue;}
+        .dsNav                  { width: 200px; float: left;}
+        .dsStep                 { width: 470px; float: left;}
+        #dsButtons              { float: right; margin: 25px 0; font-size:12px;}
+        #dsButtons button       { padding: 4px; }
+        #dsLoginLink            { color: Blue; font-weight: bold; font-size:12px; margin-top:15px; }
+        #dsNavLinks a.selected  { color: black; cursor: default; text-decoration: none; }
+    </style>
 
     <div class="DisplayOff" id="actionBlock">
         <asp:Button ID="btnResolveShid" runat="server" Text="..." OnClick="btnResolveShid_Click" />
     </div>
     <div class="PagePartWide" style="padding-left: 10px; width: 97%;">
+    
         <asp:ScriptManager ID="mainScriptManager" runat="server"></asp:ScriptManager>
         <br class="halfLine" />
         <table border="0" style="width: 98%;" id="selectionCriteria">
@@ -206,11 +267,13 @@
                                     <br />
                                         <div style="text-align: center;">
                                             <input type="button" id="showInd" class="LabelText" onclick="parseTable(); showDialog('PACIndividuals');" value="Add Signer" />&nbsp;
-                                            <asp:Button runat="server" ID="btnDownloadPACDuesNonCorp" OnClick="btnDownloadPACDuesNonCorp_Click" Text="Download PAC Agreement Form" Visible="false" />
-                                            <asp:Button runat="server" ID="btnDownloadPACDuesCorp" OnClick="btnDownloadPACDuesCorp_Click" Text="Download PAC Agreement Form" Visible="false" />
                                         </div>
                                     <br />
                                     <div style="text-align: right; padding-right: 30px;">
+                                        
+                                        <asp:Button runat="server" ID="btnDownloadPACDuesNonCorp" OnClick="btnDownloadPACDuesNonCorp_Click" Text="Download PAC Agreement Form" Visible="false" CssClass="btnDownload" />
+                                        <asp:Button runat="server" ID="btnDownloadPACDuesCorp" OnClick="btnDownloadPACDuesCorp_Click" Text="Download PAC Agreement Form" Visible="false" CssClass="btnDownload" />
+                                        <a id="dsInstructionsLink" href="" class="float:left;">DocuSign Instructions</a>
                                         <input type="checkbox" id="pushPAC" name="pushPAC" />Apply to all Contracts
                                         <input type="button" class="LabelText" onclick ="parseTable(); $('#<%=btnSave.ClientID%>').click()" value="Save" />
                                         <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btnLabel" style="display: none;" OnClick="btnSave_Click" />
@@ -222,6 +285,36 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    <div id="dsInstructions" style="text-align:left;">
+        <div class="dsNav">
+            
+            <a href="https://app2.docusign.com/documents/all" target="_docusign"><img src='/img/docusign/logo.jpg' id='dsLogo' /></a>
+            <ol id='dsNavLinks'>
+                <li><a href="1" class="selected">Login to DocuSign</a></li>
+                <li><a href="2">Select "New > Send a Document"</a></li>
+                <li><a href="3">Upload the document</a></li>
+                <li><a href="4">Click "Apply Template"</a></li>
+                <li><a href="5">Choose the correct template</a></li>
+                <li><a href="6">Enter the name and email addresses of the signers</a></li>
+                <li><a href="7">Remove any extra signers</a></li>
+                <li><a href="8">Click "Next"</a></li>
+                <li><a href="9">Review & Send</a></li>
+                
+            </ol>
+            <br /><br />
+            <a href="https://app2.docusign.com/documents/all" id="dsLoginLink" target="_docusign">CLICK HERE SIGN IN</a>
+
+        </div>
+        <div class="dsStep">
+            <span id="dsButtons">
+                <button id="dsPrev">< prev</button>
+                <button id="dsNext">next ></button>
+            </span>
+            <a href="https://app2.docusign.com/documents/all" target="_docusign"><img class="dsImage" src="/img/docusign/1.png" /></a>
+        </div>
+    </div>
     </div>
     <div id="hideModal" class="DisplayOff">
         <!-- Address Finder Dialog -->

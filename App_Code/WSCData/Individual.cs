@@ -6,6 +6,15 @@ namespace WSCData {
     [Serializable]
     public class Individual : ISerializable {
 
+        public int IndividualID { get; set; }
+        public string FullName { get; set; }
+        public double Percentage { get; set; }
+        public Boolean Signed { get; set; }
+        public DateTime SignedDate { get; set; }
+        public char Sort { get; set; }
+        public int SHID { get; set; }
+        public string Email { get; set; }
+
         public Individual() {}
 
         public Individual(int individualId, string fullName)
@@ -52,6 +61,7 @@ namespace WSCData {
             info.AddValue("SignedDate", SignedDate, typeof(DateTime));
             info.AddValue("Sort", Sort, typeof(char));
             info.AddValue("SHID", SHID, typeof(int));
+            info.AddValue("Email", SHID, typeof(int));
         }
 
         public Individual(SerializationInfo info, StreamingContext context)
@@ -63,6 +73,7 @@ namespace WSCData {
             SignedDate = (DateTime)info.GetValue("SignedDate", typeof(DateTime));
             Sort = (char)info.GetValue("Sort", typeof(char));
             SHID = (int)info.GetValue("SHID", typeof(int));
+            SHID = (int)info.GetValue("Email", typeof(int));
         }
 
         public override string ToString() {
@@ -71,13 +82,5 @@ namespace WSCData {
             else
                 return Convert.ToString(IndividualID) + "|" + Convert.ToChar(Sort) + "|" + Convert.ToString(Percentage) + "|false|";
         }
-        
-        public int IndividualID { get; set; }
-        public string FullName { get; set; }
-        public double Percentage { get; set; }
-        public Boolean Signed { get; set; }
-        public DateTime SignedDate { get; set; }
-        public char Sort { get; set; }
-        public int SHID { get; set; }
     }
 }

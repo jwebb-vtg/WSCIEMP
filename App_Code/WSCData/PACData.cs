@@ -34,11 +34,13 @@ namespace WSCData {
                     try {
                         using (SqlDataReader dr = SqlHelper.ExecuteReader(conn, CommandType.StoredProcedure, procName, spParams)) {
 
-                            int iIndividualId = dr.GetOrdinal("individual_id");
-                            int iFullName = dr.GetOrdinal("full_name");
-                            
                             while (dr.Read()) {
-                                individuals.Add(new Individual(dr.GetInt16(iIndividualId), dr.GetString(iFullName)));
+                                individuals.Add(new Individual{
+                                    IndividualID = Convert.ToInt32(dr["individual_id"] ?? 0), 
+                                    FullName = dr["full_name"].ToString(),
+                                    Email = (dr["email"] == null) ? "" : dr["email"].ToString(),
+                                    SHID = (dr["shid"].ToString() == "") ? 0 : Convert.ToInt32(dr["shid"].ToString())
+                                });
                             }
                         }
                     }
@@ -81,6 +83,8 @@ namespace WSCData {
 
                         spParams[1].Value = individual.IndividualID;
                         spParams[2].Value = individual.FullName;
+                        spParams[3].Value = individual.Email;
+                        spParams[4].Value = individual.SHID;
 
                         using (SqlTransaction tran = conn.BeginTransaction())
                         {

@@ -27,12 +27,9 @@ namespace WSCIEMP.Downloads
         {
             filename = "~/Downloads/" + Request.QueryString["Filename"] + ".pdf";
 
-
             var pdfReader = new PdfReader(System.Web.HttpContext.Current.Server.MapPath(filename));
             var output = new MemoryStream();
             stamper = new PdfStamper(pdfReader, output);
-
-            
 
             OutputParams();
             Request.QueryString.AllKeys.ToList().ForEach(k => stamper.AcroFields.SetField(k, Request.QueryString[k]));

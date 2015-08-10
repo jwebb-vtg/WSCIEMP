@@ -74,333 +74,58 @@ namespace WSCIEMP.Admin
             }
         }
 
-        private void CloseAndResolve(string dialogId)
-        {
-            string script = string.Format(@"closeAndResolve('{0}')", dialogId);
-            ScriptManager.RegisterClientScriptBlock(this, typeof(Page), UniqueID, script, true);
-        }
-
-        private void ResetPage() {
-
-            const string METHOD_NAME = "ResetPage";
-
-            try {
-                this.MySHID = "";
-                lblBusName.Text = "";
-                lblAddressType.Text = "";
-
-                pACContibution.Text = "";
-                pACDate.Text = "";
-
-                this.IndTable = new List<Individual>();
-                indTableField.Value = "";
-
-                pacMessages.InnerText = "";
-            }
-            catch (Exception ex)
-            {
-                Common.CException wex = new Common.CException(MOD_NAME + METHOD_NAME, ex);
-                throw (wex);
-            }
-        }
-
-        private void UpdateIndTable()
-        {
-            string summaryData = indTableField.Value;
-            
-            this.IndTable = new List<Individual>();
-
-            if (summaryData != null && summaryData.Length > 1)
-            {
-                string[] lines = summaryData.Split('~');
-                for (int l = 0; l < lines.Length; l++)
-                {
-                    if (lines[l] != null && lines[l].Length > 1)
-                    {
-                        string[] items = lines[l].Split('|');
-                        Individual tempHolder = new Individual();
-                        tempHolder.IndividualID = Convert.ToInt32(items[1]);
-                        if (items[0] != null && items[0].Length > 0)
-                            tempHolder.Sort = Convert.ToChar(items[0]);
-                        else
-                            tempHolder.Sort = ' ';
-                        tempHolder.Percentage = Convert.ToDouble(items[2]);
-                        tempHolder.Signed = ("true" == items[3]);
-                        if (items.Length > 4 && items[4].Length > 1)
-                            tempHolder.SignedDate = Convert.ToDateTime(items[4]);
-                        if (items.Length > 5 && items[5].Length > 1)
-                            tempHolder.SHID = Convert.ToInt32(items[5]);
-                        this.IndTable.Add(tempHolder);
-                    }
-                }
-            }
-        }
-
-        private void ReBuildTable()
-        {
-            int crop_year = Convert.ToInt16(ddlCropYear.Text);
-            string shid = txtSHID.Text;
-
-            List<Contract> contractList = BeetDataContract.GetContracts(shid, crop_year, 0);
-
-            if (contractList != null && contractList.Count > 0)
-            {
-                TableHeaderRow headerRow = new TableHeaderRow();
-
-                TableHeaderCell h1 = new TableHeaderCell();
-                h1.Text ="Contract No";
-                headerRow.Cells.Add(h1);
-
-                TableHeaderCell h2 = new TableHeaderCell();
-                h2.Text = "PAC Dues";
-                headerRow.Cells.Add(h2);
-
-                contractTable.Rows.Add(headerRow);
-
-                for (int i = 0; i < contractList.Count; i++)
-                {
-                    TableRow row = new TableRow();
-
-                    TableCell cell1 = new TableCell();
-                    cell1.Text = Convert.ToString(contractList[i].contractNo);
-                    row.Cells.Add(cell1);
-
-                    TableCell cell2 = new TableCell();
-                    cell2.Text = Convert.ToString(contractList[i].pacDues);
-                    row.Cells.Add(cell2);
-
-                    contractTable.Rows.Add(row);
-                }
-            }
-
-            if (IndTable.Count > 0)
-            {
-
-                TableHeaderRow headerRow = new TableHeaderRow();
-
-                TableHeaderCell hshid = new TableHeaderCell();
-                hshid.Text = "SHID";
-                headerRow.Cells.Add(hshid);
-
-                TableHeaderCell h1 = new TableHeaderCell();
-                h1.Text ="Sort";
-                headerRow.Cells.Add(h1);
-
-                TableHeaderCell h2 = new TableHeaderCell();
-                h2.Text = "Individual";
-                headerRow.Cells.Add(h2);
-
-                TableHeaderCell h3 = new TableHeaderCell();
-                h3.Text = "Individual Id";
-                h3.Attributes.Add("style", "display: none");
-                headerRow.Cells.Add(h3);
-
-                TableHeaderCell h4 = new TableHeaderCell();
-                h4.Text = "Assigned Percentage";
-                headerRow.Cells.Add(h4);
-
-                TableHeaderCell h5 = new TableHeaderCell();
-                h5.Text = "Signature Date";
-                headerRow.Cells.Add(h5);
-
-                TableHeaderCell h6 = new TableHeaderCell();
-                h6.Text = "Remove";
-                headerRow.Cells.Add(h6);
-
-                indTable.Rows.Add(headerRow);
-
-                for (int i = 0; i < this.IndTable.Count; i++)
-                {
-                    TableRow row = new TableRow();
-
-                    TableCell cellshid = new TableCell();
-                    TextBox SHID = new TextBox();
-                    SHID.ID = "SHID_" + i;
-                    SHID.Width = 50;
-                    SHID.MaxLength = 6;
-                    SHID.Attributes.Add("runat", "server");
-                    SHID.Attributes.Add("class", "shid");
-                    SHID.Text = Convert.ToString(this.IndTable[i].SHID).Trim();
-                    if (SHID.Text == "0")
-                        SHID.Text = this.MySHID;
-                    cellshid.Controls.Add(SHID);
-                    row.Cells.Add(cellshid);
-
-                    TableCell cell1 = new TableCell();
-                    TextBox Sort = new TextBox();
-                    Sort.ID = "Sort_" + i;
-                    Sort.Width = 15;
-                    Sort.MaxLength = 1;
-                    Sort.Attributes.Add("runat", "server");
-                    Sort.Attributes.Add("class", "sort");
-                    Sort.Text = Convert.ToString(this.IndTable[i].Sort).Trim();
-                    cell1.Controls.Add(Sort);
-                    row.Cells.Add(cell1);
-
-                    TableCell cell2 = new TableCell();
-                    string fName = this.IndTable[i].FullName;
-                    if (fName == null || fName.Length == 0)
-                    {
-                        List<Individual> inds = PACData.GetPACIndividuals(this.IndTable[i].IndividualID, null);
-                        if (inds != null && inds.Count > 0)
-                            fName = ((Individual)inds[0]).FullName;
-                    }
-                    cell2.Text = fName;
-                    row.Cells.Add(cell2);
-
-                    TableCell cell3 = new TableCell();
-                    HtmlInputHidden IndId = new HtmlInputHidden();
-                    IndId.ID = "IndividualID_" + i;
-                    IndId.Value = Convert.ToString(this.IndTable[i].IndividualID);
-                    IndId.Attributes.Add("class", "individualid");
-                    cell3.Controls.Add(IndId);
-                    cell3.Attributes.Add("style", "display: none");
-                    row.Cells.Add(cell3);
-
-                    TableCell cell4 = new TableCell();
-                    TextBox Percentage = new TextBox();
-                    Percentage.ID = "Percentage_" + i;
-                    Percentage.Width = 25;
-                    Percentage.MaxLength = 5;
-                    Percentage.Attributes.Add("runat", "server");
-                    Percentage.Attributes.Add("class", "percentage");
-                    Percentage.Text = Convert.ToString(this.IndTable[i].Percentage);
-                    cell4.Controls.Add(Percentage);
-                    row.Cells.Add(cell4);
-
-                    /*
-                    TableCell cell4 = new TableCell();
-                    HtmlInputCheckBox Signed = new HtmlInputCheckBox();
-                    Signed.ID = "Signed_" + i;
-                    Signed.Checked = this.IndTable[i].Signed;
-                    Signed.Attributes.Add("runat", "server");
-                    Signed.Attributes.Add("class", "signed");
-                    cell4.Controls.Add(Signed);
-                    row.Cells.Add(cell4);
-                    */
-
-                    TableCell cell5 = new TableCell();
-                    HtmlInputText SignedDate = new HtmlInputText();
-                    SignedDate.ID = "SignedDate_" + i;
-                    SignedDate.Size = 10;
-                    if (this.IndTable[i].Signed)
-                        SignedDate.Value = this.IndTable[i].SignedDate.ToString("MM/dd/yyyy");
-                    SignedDate.Attributes.Add("class", "signedDate");
-                    SignedDate.Attributes.Add("onclick", "JavaScript:LaunchDatePicker(this);");
-                    cell5.Controls.Add(SignedDate);
-                    row.Cells.Add(cell5);
-
-                    TableCell cell6 = new TableCell();
-                    cell6.Attributes.Add("style", "text-align: center;");
-                    HtmlAnchor anchor = new HtmlAnchor();
-                    anchor.HRef = "javascript:void(0);";
-                    anchor.InnerText = "X";
-                    anchor.Attributes.Add("onclick", "DeleteIndRow(this);");
-                    cell6.Controls.Add(anchor);
-                    row.Cells.Add(cell6);
-
-                    indTable.Rows.Add(row);
-                }
-            }
-        }
-
+        
+        // PAC Search
+        
         protected void btnResolveShid_Click(object sender, EventArgs e)
         {
             int crop_year = Convert.ToInt16(ddlCropYear.Text);
             string shid = txtSHID.Text;
 
-            ResetPage();
-
-            if (shid != null && shid.Length > 0)
-            {
-                List<ListAddressItem> addrList = BeetDataAddress.AddressGetInfo(Convert.ToInt32(shid), 0, crop_year);
-
-                if (addrList.Count > 0)
-                {
-                    txtSHID.Text = shid;
-                    this.MySHID = shid;
-
-                    ListAddressItem item = addrList[0];
-
-                    lblBusName.Text = item.BusName;
-
-                    switch (Convert.ToString(item.AddressType))
-                    {
-                        case "1":
-                            lblAddressType.Text = "Individual";
-                            break;
-                        case "2":
-                            lblAddressType.Text = "Corporation";
-                            break;
-                        default:
-                            lblAddressType.Text = "Other";
-                            break;
-                    }
-                    ToggleContractDownloadButton();
-                }
-
-                uplShid.Update();
-
-                PACAgreement pac = PACData.GetPACAgreement(shid, crop_year);
-                if (pac != null)
-                {
-                    pACContibution.Text = Convert.ToString(pac.Contribution);
-                    pACDate.Text = pac.PACDate;
-                    indTableField.Value = pac.IndividualsString;
-                    this.IndTable = pac.Individuals;
-                }
-
-                ReBuildTable();
-                UpdatePACDetails.Update();
-            }
+            LoadPAC(crop_year, shid);
+            CloseAndResolve("AddressFinder");
         }
 
+        protected void ddlCropYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.MySHID != null && this.MySHID.Length > 0)
+            {
+                btnResolveShid_Click(sender, e);
+            }
+        }
+        
+        
+        // Address Search
+        
         protected void btnAddrOk_Click(object sender, EventArgs e)
         {
-            Common.AppHelper.HideWarning(addrWarning);
-            
             // If we have a selected address, use the shid for our main page.
-            if (lstAddressName.SelectedItem != null) {
-
+            if (lstAddressName.SelectedItem != null)
+            {
                 int crop_year = Convert.ToInt16(ddlCropYear.Text);
                 string shid = txtAddrSHID.Text;
-
-                ResetPage();
-
-                txtSHID.Text = shid;
-                lblBusName.Text = txtAddrBName.Text;
-                this.MySHID = shid;
-
-                switch (Convert.ToString(txtAddrType.Value))
+                if (hdnFinderType.Value == "AddressFinder")
                 {
-                    case "1":
-                        lblAddressType.Text = "Individual";
-                        break;
-                    case "2":
-                        lblAddressType.Text = "Corporation";
-                        break;
-                    default:
-                        lblAddressType.Text = "Other";
-                        break;
+                    LoadPAC(crop_year, shid);
                 }
-                ToggleContractDownloadButton();
-                
-                uplShid.Update();
-
-                PACAgreement pac = PACData.GetPACAgreement(shid, crop_year);
-                if (pac != null)
+                else
                 {
-                    pACContibution.Text = Convert.ToString(pac.Contribution);
-                    pACDate.Text = pac.PACDate;
-                    indTableField.Value = pac.IndividualsString;
-                    this.IndTable = pac.Individuals;
+                    var ind = new Individual
+                    {
+                        FullName = txtAddrFName.Text + " " + txtAddrLName.Text,
+                        SHID = Convert.ToInt32(shid),
+                        Sort = Convert.ToChar("1"),
+                        Percentage = 100,
+                        IndividualID = 0,
+                        Email = txtEmail.Text
+                    };
+                    ind.IndividualID = PACData.SaveIndividual(ind);
+                    IndTable.Add(ind);
+                    ReBuildTable();
+                    UpdatePACDetails.Update();
                 }
-
-                ReBuildTable();
-                UpdatePACDetails.Update();
+                CloseAndResolve("AddressFinder");
             }
-
-            CloseAndResolve("AddressFinder");
         }
 
         protected void btnAddrFind_Click(object sender, EventArgs e)
@@ -459,13 +184,8 @@ namespace WSCIEMP.Admin
             }
         }
 
-        protected void ddlCropYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.MySHID != null && this.MySHID.Length > 0)
-            {
-                btnResolveShid_Click(sender, e);
-            }
-        }
+        
+        // Signer Search
 
         protected void lstAddressName_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -492,6 +212,7 @@ namespace WSCIEMP.Admin
                     txtAddrState.Text = item.StateName;
                     txtAddrZip.Text = item.PostalCode;
                     txtAddrPhoneNo.Text = item.PhoneNo;
+                    txtEmail.Text = item.Email;
                     txtAddrType.Value = Convert.ToString(item.AddressType);
                 }
             }
@@ -502,36 +223,23 @@ namespace WSCIEMP.Admin
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-            if (this.MySHID != null && this.MySHID.Length > 0)
-            {
-                UpdateIndTable();
-
-                if (pACDate.Text == null || pACDate.Text.Length == 0)
-                    pACDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
-
-                if (pACContibution.Text == null || pACContibution.Text.Length == 0)
-                    pACContibution.Text = "0";
-
-                if (this.IndTable != null && this.MySHID != null && this.MySHID.Length > 0)
-                {
-                    PACAgreement pacAgreement = new PACAgreement(this.MySHID, Convert.ToDouble(pACContibution.Text), pACDate.Text, Convert.ToInt16(ddlCropYear.Text), this.IndTable);
-                    PACData.SavePACAgreement(pacAgreement);
-                }
-
-                btnResolveShid_Click(sender, e);
-                pacMessages.InnerText = "PAC Agreement Saved";
-            }
-        }
+        
+        // Individual Search
 
         protected void btnIndAdd_Click(object sender, EventArgs e)
         {
             pacMessages.InnerText = "";
-
+            int userId = 0;
             if (newIndividualName != null && newIndividualName.Text.Length > 1)
             {
-                int userId = PACData.SaveIndividual(new Individual(0, newIndividualName.Text));
+                var i = new Individual
+                {
+                    IndividualID = 0,
+                    FullName = newIndividualName.Text,
+                    Email = newIndividualEmail.Text,
+                    SHID = Convert.ToInt32(txtSHID.Text)
+                };
+                userId = PACData.SaveIndividual(i);
                 if (userId > 0)
                 {
                     Individual user = PACData.GetPACIndividuals(userId, null)[0];
@@ -607,134 +315,420 @@ namespace WSCIEMP.Admin
             CloseAndResolve("PACIndividuals");
         }
 
-        protected void Individual_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        protected void btnDownloadPACDuesCorp_Click(object server, EventArgs e)
+        // PAC Form
+
+        protected void btnDownloadPACAgreement_Click(object server, EventArgs e)
         {
-            /*
-             CORPORATION NAME
-            LastNameFirstName
-            Address
-            PHONE
-            Dated
-            Individual
-            WesternSugarCoopBy
-            WesternSugarCoopIts
-            Individual1
-            IndividualPercentage1
-            Individual2
-            IndividualPercental2
-            Individual3
-            IndividualPercentage3
-            Individual4
-            IndividualPercentage4
-            TOTAL
-            100
-            Dated_2
-            CorporationName
-            AssignorCorporateShareholderBy
-            undefined_2
-            AssignorCorporateShareholderIts
-            AssigneeIndividuals1
-            AssigneeIndividuals2
-            AssigneeIndividuals3
-            TwoDigitCents
-            CentsPerTonDevlivered
-             */
-
-            pacMessages.InnerText = "";
-
-            string searchTerm = txtSHID.Text.Trim();
-            int searchType = 1;
-            int cropYear = Convert.ToInt16(ddlCropYear.Text);
-            List<ListAddressItem> addrList = BeetDataAddress.AddressFindByTerm(searchTerm, cropYear, searchType);
-            var address = new StringBuilder();
-            address.AppendFormat("{0}, {1}, {2}, {3}", addrList[0].AdrLine1, addrList[0].AdrLine2, addrList[0].CityName, addrList[0].StateName);
-            var phone = addrList[0].PhoneNo ?? "";
-
-            var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
-            var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
-            var i = new Individual();
-            var signerFirstName = inds[0].FullName.Split(" ".ToCharArray())[0];
-            var signerLastName = inds[0].FullName.Split(" ".ToCharArray())[1];
-
             var qs = new NameValueCollection();
-            var date = DateTime.Now;
-            var mfi = new DateTimeFormatInfo();
-            var strMonthName = mfi.GetMonthName(date.Month).ToString();
+            if (lblAddressType.Text == "Corporation")
+            {
+                pacMessages.InnerText = "";
 
-            qs.Add("Filename", "PACDuesCorp");
-            qs.Add("CORPORATION NAME", Server.UrlEncode(lblBusName.Text));
-            qs.Add("CorporationName", Server.UrlEncode(lblBusName.Text));
-            qs.Add("LastNameFirstName", signerLastName + ", " + signerFirstName);
-            qs.Add("Dated", DateTime.Now.ToString("MM/dd/yyyy"));
-            qs.Add("CentsPerTonDevlivered", pACContibution.Text);
-            qs.Add("TwoDigitCents", (pACContibution.Text.Length == 1) ? "0" + pACContibution.Text : pACContibution.Text);
-            qs.Add("Address", address.ToString());
-            qs.Add("PHONE", phone);
-            qs.Add("Text1", DateTime.Now.Year.ToString());
-            qs.Add("Year2", DateTime.Now.Year.ToString());
+                string searchTerm = txtSHID.Text.Trim();
+                int searchType = 1;
+                int cropYear = Convert.ToInt16(ddlCropYear.Text);
+                List<ListAddressItem> addrList = BeetDataAddress.AddressFindByTerm(searchTerm, cropYear, searchType);
+                var address = new StringBuilder();
+                address.AppendFormat("{0}, {1}, {2}, {3}", addrList[0].AdrLine1, addrList[0].AdrLine2, addrList[0].CityName, addrList[0].StateName);
+                var phone = addrList[0].PhoneNo ?? "";
+
+                var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
+                var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
+                var i = new Individual();
+                var signerFirstName = inds[0].FullName.Split(" ".ToCharArray())[0];
+                var signerLastName = inds[0].FullName.Split(" ".ToCharArray())[1];
+
+                var date = DateTime.Now;
+                var mfi = new DateTimeFormatInfo();
+                var strMonthName = mfi.GetMonthName(date.Month).ToString();
+
+                qs.Add("Filename", "PACDuesCorp");
+                qs.Add("CORPORATION NAME", Server.UrlEncode(lblBusName.Text));
+                qs.Add("CorporationName", Server.UrlEncode(lblBusName.Text));
+                qs.Add("LastNameFirstName", signerLastName + ", " + signerFirstName);
+                qs.Add("Dated", DateTime.Now.ToString("MM/dd/yyyy"));
+                qs.Add("CentsPerTonDevlivered", pACContibution.Text);
+                qs.Add("TwoDigitCents", (pACContibution.Text.Length == 1) ? "0" + pACContibution.Text : pACContibution.Text);
+                qs.Add("Address", address.ToString());
+                qs.Add("PHONE", phone);
+                qs.Add("Text1", DateTime.Now.Year.ToString());
+                qs.Add("Year2", DateTime.Now.Year.ToString());
+
+                try
+                {
+                    qs.Add("Individual1", (PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null)[0].FullName));
+                    qs.Add("IndividualPercentage1", pac.Individuals[0].Percentage.ToString());
+                    qs.Add("Individual2", (PACData.GetPACIndividuals(pac.Individuals[1].IndividualID, null)[0].FullName));
+                    qs.Add("IndividualPercentage2", pac.Individuals[1].Percentage.ToString());
+                    qs.Add("Individual3", (PACData.GetPACIndividuals(pac.Individuals[2].IndividualID, null)[0].FullName));
+                    qs.Add("IndividualPercentage3", pac.Individuals[2].Percentage.ToString());
+                    qs.Add("Individual4", (PACData.GetPACIndividuals(pac.Individuals[3].IndividualID, null)[0].FullName));
+                    qs.Add("IndividualPercentage4", pac.Individuals[3].Percentage.ToString());
+
+                }
+                catch
+                {
+                }
+            }
+            else
+            {
+                var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
+                var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
+                var i = new Individual();
+
+
+                var date = DateTime.Now;
+                var mfi = new DateTimeFormatInfo();
+                var strMonthName = mfi.GetMonthName(date.Month).ToString();
+
+                qs.Add("CurrentTwoDigitYear", date.ToString("yy"));
+                qs.Add("CurrentDayMonth", mfi.GetMonthName(date.Month).ToString() + " " + date.Day);
+                qs.Add("SumOfMoneyPerTon", pACContibution.Text);
+                qs.Add("CropYear1", DateTime.Now.Year.ToString());
+                qs.Add("SomeBullshit", DateTime.Now.Year.ToString());
+                qs.Add("PrintShareholderName", ((Individual)inds[0]).FullName);
+                qs.Add("Filename", "PACDuesNonCorp");
+            }
+
+            Response.Redirect("~/Downloads/Downloader.aspx" + qs.ToQueryString());
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            if (this.MySHID != null && this.MySHID.Length > 0)
+            {
+                UpdateIndTable();
+
+                if (pACDate.Text == null || pACDate.Text.Length == 0)
+                    pACDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
+
+                if (pACContibution.Text == null || pACContibution.Text.Length == 0)
+                    pACContibution.Text = "0";
+
+                if (this.IndTable != null && this.MySHID != null && this.MySHID.Length > 0)
+                {
+                    PACAgreement pacAgreement = new PACAgreement(this.MySHID, Convert.ToDouble(pACContibution.Text), pACDate.Text, Convert.ToInt16(ddlCropYear.Text), this.IndTable);
+                    PACData.SavePACAgreement(pacAgreement);
+                }
+
+                btnResolveShid_Click(sender, e);
+                pacMessages.InnerText = "PAC Agreement Saved";
+            }
+        }
+
+       
+        // Private
+
+        private void LoadPAC(int crop_year, string shid)
+        {
+            Common.AppHelper.HideWarning(addrWarning);
+
+            ResetPage();
+
+            txtSHID.Text = shid;
+            lblBusName.Text = txtAddrBName.Text;
+            this.MySHID = shid;
 
             try
             {
-                qs.Add("Individual1", (PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null)[0].FullName));
-                qs.Add("IndividualPercentage1", pac.Individuals[0].Percentage.ToString());
-                qs.Add("Individual2", (PACData.GetPACIndividuals(pac.Individuals[1].IndividualID, null)[0].FullName));
-                qs.Add("IndividualPercentage2", pac.Individuals[1].Percentage.ToString());
-                qs.Add("Individual3", (PACData.GetPACIndividuals(pac.Individuals[2].IndividualID, null)[0].FullName));
-                qs.Add("IndividualPercentage3", pac.Individuals[2].Percentage.ToString());
-                qs.Add("Individual4", (PACData.GetPACIndividuals(pac.Individuals[3].IndividualID, null)[0].FullName));
-                qs.Add("IndividualPercentage4", pac.Individuals[3].Percentage.ToString());
 
+                var addresses = BeetDataAddress.AddressGetInfo(Convert.ToInt32(shid), 0, crop_year);
+
+
+                var addr = addresses[0];
+
+
+
+                switch (Convert.ToString(addr.AddressType))
+                {
+                    case "1":
+                        lblAddressType.Text = "Individual";
+                        break;
+                    case "2":
+                        lblAddressType.Text = "Corporation";
+                        break;
+                    default:
+                        lblAddressType.Text = "Other";
+                        break;
+                }
+
+                uplShid.Update();
+
+                PACAgreement pac = PACData.GetPACAgreement(shid, crop_year);
+                if (pac != null)
+                {
+                    pACContibution.Text = Convert.ToString(pac.Contribution);
+                    pACDate.Text = pac.PACDate;
+
+                    if (pac.Individuals.Count == 0)
+                    {
+                        pac.Individuals.Add(CreateAndFetchIndividual(crop_year, shid));
+                    }
+                    indTableField.Value = pac.IndividualsString;
+                    this.IndTable = pac.Individuals;
+                }
+                else
+                {
+                    IndTable.Add(CreateAndFetchIndividual(crop_year, shid));
+                }
+                UpdatePACDetails.Visible = true;
+                ReBuildTable();
+                UpdatePACDetails.Update();
             }
             catch
             {
+                pacMessages.InnerHtml = "<font style='color: red;'>Invalid SHID / Crop Year</font>";
+                UpdatePACDetails.Visible = false;
+                return;
+            }
+        }
+
+        private void ResetPage()
+        {
+
+            const string METHOD_NAME = "ResetPage";
+
+            try
+            {
+                this.MySHID = "";
+                lblBusName.Text = "";
+                lblAddressType.Text = "";
+
+                pACContibution.Text = "";
+                pACDate.Text = "";
+
+                this.IndTable = new List<Individual>();
+                indTableField.Value = "";
+
+                pacMessages.InnerText = "";
+            }
+            catch (Exception ex)
+            {
+                Common.CException wex = new Common.CException(MOD_NAME + METHOD_NAME, ex);
+                throw (wex);
+            }
+        }
+
+        private void UpdateIndTable()
+        {
+            string summaryData = indTableField.Value;
+
+            this.IndTable = new List<Individual>();
+
+            if (summaryData != null && summaryData.Length > 1)
+            {
+                string[] lines = summaryData.Split('~');
+                for (int l = 0; l < lines.Length; l++)
+                {
+                    if (lines[l] != null && lines[l].Length > 1)
+                    {
+                        string[] items = lines[l].Split('|');
+                        Individual tempHolder = new Individual();
+                        tempHolder.IndividualID = Convert.ToInt32(items[1]);
+                        if (items[0] != null && items[0].Length > 0)
+                            tempHolder.Sort = Convert.ToChar(items[0]);
+                        else
+                            tempHolder.Sort = ' ';
+                        tempHolder.Percentage = Convert.ToDouble(items[2]);
+                        tempHolder.Signed = ("true" == items[3]);
+                        if (items.Length > 4 && items[4].Length > 1)
+                            tempHolder.SignedDate = Convert.ToDateTime(items[4]);
+                        if (items.Length > 5 && items[5].Length > 1)
+                            tempHolder.SHID = Convert.ToInt32(items[5]);
+                        this.IndTable.Add(tempHolder);
+                    }
+                }
+            }
+        }
+
+        private void ReBuildTable()
+        {
+            int crop_year = Convert.ToInt16(ddlCropYear.Text);
+            string shid = txtSHID.Text;
+
+            List<Contract> contractList = BeetDataContract.GetContracts(shid, crop_year, 0);
+
+            if (contractList != null && contractList.Count > 0)
+            {
+                TableHeaderRow headerRow = new TableHeaderRow();
+
+                TableHeaderCell h1 = new TableHeaderCell();
+                h1.Text = "Contract No";
+                headerRow.Cells.Add(h1);
+
+                TableHeaderCell h2 = new TableHeaderCell();
+                h2.Text = "PAC Dues";
+                headerRow.Cells.Add(h2);
+
+                contractTable.Rows.Add(headerRow);
+
+                for (int i = 0; i < contractList.Count; i++)
+                {
+                    TableRow row = new TableRow();
+
+                    TableCell cell1 = new TableCell();
+                    cell1.Text = Convert.ToString(contractList[i].contractNo);
+                    row.Cells.Add(cell1);
+
+                    TableCell cell2 = new TableCell();
+                    cell2.Text = Convert.ToString(contractList[i].pacDues);
+                    row.Cells.Add(cell2);
+
+                    contractTable.Rows.Add(row);
+                }
             }
 
-            Response.Redirect("~/Downloads/Downloader.aspx" + qs.ToQueryString());
+            if (IndTable.Count > 0)
+            {
+
+                TableHeaderRow headerRow = new TableHeaderRow();
+
+                TableHeaderCell hshid = new TableHeaderCell();
+                hshid.Text = "SHID";
+                headerRow.Cells.Add(hshid);
+
+                TableHeaderCell h1 = new TableHeaderCell();
+                h1.Text = "Sort";
+                headerRow.Cells.Add(h1);
+
+                TableHeaderCell h2 = new TableHeaderCell();
+                h2.Text = "Individual";
+                headerRow.Cells.Add(h2);
+
+                TableHeaderCell hEmail = new TableHeaderCell();
+                hEmail.Text = "Email";
+                headerRow.Cells.Add(hEmail);
+
+                TableHeaderCell h3 = new TableHeaderCell();
+                h3.Text = "Individual Id";
+                h3.Attributes.Add("style", "display: none");
+                headerRow.Cells.Add(h3);
+
+                TableHeaderCell h4 = new TableHeaderCell();
+                h4.Text = "Percent";
+                headerRow.Cells.Add(h4);
+
+                TableHeaderCell h5 = new TableHeaderCell();
+                h5.Text = "Signature Date";
+                headerRow.Cells.Add(h5);
+
+                TableHeaderCell h6 = new TableHeaderCell();
+                h6.Text = "Remove";
+                headerRow.Cells.Add(h6);
+
+                indTable.Rows.Add(headerRow);
+
+                for (int i = 0; i < this.IndTable.Count; i++)
+                {
+
+                    var ind = PACData.GetPACIndividuals(this.IndTable[i].IndividualID, null)[0];
+
+                    TableRow row = new TableRow();
+
+                    TableCell cellshid = new TableCell();
+                    cellshid.Text = ind.SHID.ToString();
+                    row.Cells.Add(cellshid);
+
+                    TableCell cell1 = new TableCell();
+                    TextBox Sort = new TextBox();
+                    Sort.ID = "Sort_" + i;
+                    Sort.Width = 15;
+                    Sort.MaxLength = 1;
+                    Sort.Attributes.Add("runat", "server");
+                    Sort.Attributes.Add("class", "sort");
+                    Sort.Text = Convert.ToString(this.IndTable[i].Sort).Trim();
+                    cell1.Controls.Add(Sort);
+                    row.Cells.Add(cell1);
+
+                    TableCell cell2 = new TableCell();
+                    cell2.Text = ind.FullName;
+                    cell2.Width = 150;
+                    row.Cells.Add(cell2);
+
+                    TableCell cellEmail = new TableCell();
+                    cellEmail.Text = ind.Email;
+                    cellEmail.Width = 150;
+                    row.Cells.Add(cellEmail);
+
+                    TableCell cell3 = new TableCell();
+                    HtmlInputHidden IndId = new HtmlInputHidden();
+                    IndId.ID = "IndividualID_" + i;
+                    IndId.Value = Convert.ToString(this.IndTable[i].IndividualID);
+                    IndId.Attributes.Add("class", "individualid");
+                    cell3.Controls.Add(IndId);
+                    cell3.Attributes.Add("style", "display: none");
+                    row.Cells.Add(cell3);
+
+                    TableCell cell4 = new TableCell();
+                    TextBox Percentage = new TextBox();
+                    Percentage.ID = "Percentage_" + i;
+                    Percentage.Width = 25;
+                    Percentage.MaxLength = 5;
+                    Percentage.Attributes.Add("runat", "server");
+                    Percentage.Attributes.Add("class", "percentage");
+                    Percentage.Text = Convert.ToString(this.IndTable[i].Percentage);
+                    cell4.Controls.Add(Percentage);
+                    row.Cells.Add(cell4);
+
+                    /*
+                    TableCell cell4 = new TableCell();
+                    HtmlInputCheckBox Signed = new HtmlInputCheckBox();
+                    Signed.ID = "Signed_" + i;
+                    Signed.Checked = this.IndTable[i].Signed;
+                    Signed.Attributes.Add("runat", "server");
+                    Signed.Attributes.Add("class", "signed");
+                    cell4.Controls.Add(Signed);
+                    row.Cells.Add(cell4);
+                    */
+
+                    TableCell cell5 = new TableCell();
+                    HtmlInputText SignedDate = new HtmlInputText();
+                    SignedDate.ID = "SignedDate_" + i;
+                    SignedDate.Size = 10;
+                    if (this.IndTable[i].Signed)
+                        SignedDate.Value = this.IndTable[i].SignedDate.ToString("MM/dd/yyyy");
+                    SignedDate.Attributes.Add("class", "signedDate");
+                    SignedDate.Attributes.Add("onclick", "JavaScript:LaunchDatePicker(this);");
+                    cell5.Controls.Add(SignedDate);
+                    row.Cells.Add(cell5);
+
+                    TableCell cell6 = new TableCell();
+                    cell6.Attributes.Add("style", "text-align: center;");
+                    HtmlAnchor anchor = new HtmlAnchor();
+                    anchor.HRef = "javascript:void(0);";
+                    anchor.InnerText = "X";
+                    anchor.Attributes.Add("onclick", "DeleteIndRow(this);");
+                    cell6.Controls.Add(anchor);
+                    row.Cells.Add(cell6);
+
+                    indTable.Rows.Add(row);
+                }
+            }
         }
 
-        protected void btnDownloadPACDuesNonCorp_Click(object server, EventArgs e)
+        private void CloseAndResolve(string dialogId)
         {
-            /*
-             *  ContractNumber1
-                ContractNumber2
-                SumOfMoneyPerTon
-                CropYear1
-                WithdrawalDate
-                CurrentDayMonth
-                Shareholder Signature
-                PrintLandOwnerName
-                PrintShareholderName
-                ShareholderAddress
-                Director WSCPAC
-                Company Representative
-                CurrentTwoDigitYear*/
-
-            var pac = PACData.GetPACAgreement(txtSHID.Text, Convert.ToInt16(ddlCropYear.Text));
-            var inds = PACData.GetPACIndividuals(pac.Individuals[0].IndividualID, null);
-            var i = new Individual();
-
-            var qs = new NameValueCollection();
-            var date = DateTime.Now;
-            var mfi = new DateTimeFormatInfo();
-            var strMonthName = mfi.GetMonthName(date.Month).ToString();
-
-            qs.Add("CurrentTwoDigitYear", date.ToString("yy"));
-            qs.Add("CurrentDayMonth", mfi.GetMonthName(date.Month).ToString() + " " + date.Day);
-            qs.Add("SumOfMoneyPerTon", pACContibution.Text);
-            qs.Add("CropYear1", DateTime.Now.Year.ToString());
-            qs.Add("SomeBullshit", DateTime.Now.Year.ToString());
-            qs.Add("PrintShareholderName", ((Individual)inds[0]).FullName);
-            qs.Add("Filename", "PACDuesNonCorp");
-
-            Response.Redirect("~/Downloads/Downloader.aspx" + qs.ToQueryString());
+            string script = string.Format(@"closeAndResolve('{0}')", dialogId);
+            ScriptManager.RegisterClientScriptBlock(this, typeof(Page), UniqueID, script, true);
         }
 
-        private void ToggleContractDownloadButton()
+        private Individual CreateAndFetchIndividual(int crop_year, string shid)
         {
-            btnDownloadPACDuesCorp.Visible = (lblAddressType.Text == "Corporation");
-            btnDownloadPACDuesNonCorp.Visible = (lblAddressType.Text != "Corporation");
+            int cropYear = Convert.ToInt16(ddlCropYear.Text);
+            List<ListAddressItem> addrList = BeetDataAddress.AddressFindByTerm(shid, cropYear, 1);
+            var x = addrList[0];
+            var ind = new Individual
+            {
+                FullName = x.FirstName + " " + x.LastName,
+                SHID = Convert.ToInt32(shid),
+                Sort = Convert.ToChar("1"),
+                Percentage = 100,
+                IndividualID = 0,
+                Email = x.Email
+            };
+            ind.IndividualID = PACData.SaveIndividual(ind);
+            return ind;
         }
     }
 }

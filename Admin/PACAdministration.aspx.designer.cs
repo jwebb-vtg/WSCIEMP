@@ -157,22 +157,13 @@ namespace WSCIEMP.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl PACDetailsActions;
         
         /// <summary>
-        /// btnDownloadPACDuesNonCorp control.
+        /// btnDownloadPACAgreement control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDownloadPACDuesNonCorp;
-        
-        /// <summary>
-        /// btnDownloadPACDuesCorp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDownloadPACDuesCorp;
+        protected global::System.Web.UI.WebControls.Button btnDownloadPACAgreement;
         
         /// <summary>
         /// btnSave control.
@@ -191,6 +182,15 @@ namespace WSCIEMP.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel uplAddressFinder;
+        
+        /// <summary>
+        /// hdnFinderType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnFinderType;
         
         /// <summary>
         /// addrWarning control.
@@ -355,6 +355,15 @@ namespace WSCIEMP.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtAddrPhoneNo;
         
         /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
         /// txtAddrType control.
         /// </summary>
         /// <remarks>
@@ -425,6 +434,15 @@ namespace WSCIEMP.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox newIndividualName;
+        
+        /// <summary>
+        /// newIndividualEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox newIndividualEmail;
         
         /// <summary>
         /// Button1 control.

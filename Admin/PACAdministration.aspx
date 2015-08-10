@@ -13,8 +13,9 @@
         function showDialog(id) {
             $('#<%=pacMessages.ClientID%>').html('');
 
-            if (id == 'AddressFinder') {
-                PrepAddressFinder();
+            if (id == 'AddressFinder' || id == 'SignerFinder') {
+                PrepAddressFinder(id);
+                id = "AddressFinder";
             }
             if (id == 'PACIndividuals') {
                 if ($('#<%=lblAddressType.ClientID%>').html().length == 0) {
@@ -90,7 +91,7 @@
             $(element).datepicker('show');
         }
 
-        function PrepAddressFinder() {
+        function PrepAddressFinder(id) {
 
             // clear warning
             $$('addrWarning', $('#AddressFinder')).text('');
@@ -114,6 +115,8 @@
             $$('txtAddrState', $('#AddressFinder')).val('');
             $$('txtAddrZip', $('#AddressFinder')).val('');
             $$('txtAddrPhoneNo', $('#AddressFinder')).val('');
+
+            $('#<%= hdnFinderType.ClientID %>').val(id);
         }
 
         $(document).ready(function () {
@@ -184,7 +187,7 @@
         .btnDownload {float: left;}
         #dsInstructionsLink {float: left; display: block; margin-left: 10px;}
         
-         .dsImage                { width: 470px; border: 1px solid #ddd; border-radius: 5px;}
+        .dsImage                { width: 470px; border: 1px solid #ddd; border-radius: 5px;}
         #dsLogo                 { width: 150px}
         .dsNav ol               { font-size: 12px; margin-left:-20px;}
         .dsNav ol li            { margin-top: 15px;  }
@@ -195,6 +198,22 @@
         #dsButtons button       { padding: 4px; }
         #dsLoginLink            { color: Blue; font-weight: bold; font-size:12px; margin-top:15px; }
         #dsNavLinks a.selected  { color: black; cursor: default; text-decoration: none; }
+        
+        
+        #ctl00_ContentCenter_indTable
+        {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-collapse: collapse;}
+        #ctl00_ContentCenter_indTable th {background-color: #eee; text-align: left;}
+        #ctl00_ContentCenter_indTable tr td, 
+        #ctl00_ContentCenter_indTable tr th
+        {
+            padding: 3px 10px;
+            border: 1px solid #ddd;
+            margin: 0px;
+            border-width: 1px 0px 1px;
+        }
     </style>
 
     <div class="DisplayOff" id="actionBlock">
@@ -209,39 +228,39 @@
                 <td>
                     <asp:UpdatePanel ID="uplShid" UpdateMode="Conditional" ChildrenAsTriggers="true" runat="server">
                         <ContentTemplate>
-                    <div id="pacMessages" style="text-align: center; font-weight: bold; color: Green; font-size: 1.2em;" runat="server"></div>
-                    <table border="0" style="width: 100%;">
-                        <tr>
-                            <td>
-                                <span class="LabelText">Crop Year: </span>
-                            </td>
-                            <td style="width: 16%">
-                                <span class="LabelText">Shareholder ID: </span>
-                            </td>
-                            <td style="width: 4%">&nbsp;</td>
-                            <td>
-                                <span class="LabelText">Business Name: </span>
-                            </td>
-                            <td>
-                                <span class="LabelText">Address Type: </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:DropDownList ID="ddlCropYear" TabIndex="0" runat="server" CssClass="ctlWidth60" OnSelectedIndexChanged="ddlCropYear_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-                            </td>
-                            <td colspan="2">
-                                <asp:TextBox ID="txtSHID" TabIndex="0" runat="server" CssClass="ctlWidth60"></asp:TextBox>&nbsp;&nbsp;
-                                <input id="btnFindShid" class="LabelText" type="button" onclick="showDialog('AddressFinder');" value="..." />
-                            </td>
-                            <td>
-                                <asp:Label ID="lblBusName" CssClass="ButtonText" runat="server"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:Label ID="lblAddressType" CssClass="ButtonText" runat="server"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
+                            <div id="pacMessages" style="text-align: center; font-weight: bold; color: Green; font-size: 1.2em;" runat="server"></div>
+                            <table border="0" style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <span class="LabelText">Crop Year: </span>
+                                    </td>
+                                    <td style="width: 16%">
+                                        <span class="LabelText">Shareholder ID: </span>
+                                    </td>
+                                    <td style="width: 4%">&nbsp;</td>
+                                    <td>
+                                        <span class="LabelText">Business Name: </span>
+                                    </td>
+                                    <td>
+                                        <span class="LabelText">Address Type: </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:DropDownList ID="ddlCropYear" TabIndex="0" runat="server" CssClass="ctlWidth60" OnSelectedIndexChanged="ddlCropYear_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                                    </td>
+                                    <td colspan="2">
+                                        <asp:TextBox ID="txtSHID" TabIndex="0" runat="server" CssClass="ctlWidth60"></asp:TextBox>&nbsp;&nbsp;
+                                        <input id="btnFindShid" class="LabelText" type="button" onclick="showDialog('AddressFinder');" value="..." />
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblBusName" CssClass="ButtonText" runat="server"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblAddressType" CssClass="ButtonText" runat="server"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                     <br />
@@ -262,17 +281,17 @@
                                 <asp:Table ID="contractTable" runat="server" />
                                 <br />
                                 <asp:HiddenField ID="indTableField" runat="server" />
-                                <asp:Table ID="indTable" runat="server" width="50%" />
+                                <asp:Table ID="indTable" runat="server" />
                                 <div id="PACDetailsActions" runat="server">
                                     <br />
-                                        <div style="text-align: center;">
+                                        <div style="text-align: left;">
                                             <input type="button" id="showInd" class="LabelText" onclick="parseTable(); showDialog('PACIndividuals');" value="Add Signer" />&nbsp;
+                                            <input type="button" id="btnSignerSearch" class="LabelText" onclick="parseTable(); showDialog('SignerFinder');" value="Full Search" />&nbsp;
+
                                         </div>
                                     <br />
                                     <div style="text-align: right; padding-right: 30px;">
-                                        
-                                        <asp:Button runat="server" ID="btnDownloadPACDuesNonCorp" OnClick="btnDownloadPACDuesNonCorp_Click" Text="Download PAC Agreement Form" Visible="false" CssClass="btnDownload" />
-                                        <asp:Button runat="server" ID="btnDownloadPACDuesCorp" OnClick="btnDownloadPACDuesCorp_Click" Text="Download PAC Agreement Form" Visible="false" CssClass="btnDownload" />
+                                        <asp:Button runat="server" ID="btnDownloadPACAgreement" OnClick="btnDownloadPACAgreement_Click" Text="Download PAC Agreement Form" CssClass="btnDownload" />
                                         <a id="dsInstructionsLink" href="" class="float:left;">DocuSign Instructions</a>
                                         <input type="checkbox" id="pushPAC" name="pushPAC" />Apply to all Contracts
                                         <input type="button" class="LabelText" onclick ="parseTable(); $('#<%=btnSave.ClientID%>').click()" value="Save" />
@@ -322,6 +341,7 @@
             <asp:UpdatePanel ID="uplAddressFinder" UpdateMode="Conditional" ChildrenAsTriggers="true"
                 runat="server">
                 <ContentTemplate>
+                <asp:HiddenField ID="hdnFinderType" runat="server" />
                     <br />
                     <div id="addrWarning" class="WarningOff" runat="server">
                     </div>
@@ -354,7 +374,7 @@
                     <br />
                     <table style="width: 600px; border: solid 1px #000000" id="addrResult">
                         <tr>
-                            <td rowspan="9" style="width: 45%; text-align: center; vertical-align: top;">
+                            <td rowspan="10" style="width: 45%; text-align: center; vertical-align: top;">
                                 <span class="addrLabel">Results</span><br />
                                 <asp:ListBox ID="lstAddressName" CssClass="textEntry" Width="250" Height="200" DataTextField="BusName"
                                     DataValueField="SHID" runat="server" OnSelectedIndexChanged="lstAddressName_SelectedIndexChanged"
@@ -440,6 +460,14 @@
                                 <asp:TextBox ID="txtAddrPhoneNo" CssClass="textEntry" Width="120" runat="server"></asp:TextBox>
                             </td>
                         </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <span class="textEntry">Email:</span>
+                            </td>
+                            <td style="text-align: left;" colspan="2">
+                                <asp:TextBox ID="txtEmail" CssClass="textEntry" Width="120" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
                     </table>
                     <asp:HiddenField ID="txtAddrType" value="" runat="server"></asp:HiddenField>
                     <br />
@@ -468,11 +496,16 @@
                                 <br />
                                 <span class="addrLabel">Results</span><br />
                                 <asp:ListBox ID="IndividualsListBox" CssClass="textEntry" Width="250" Height="100" runat="server" DataTextField="FullName"
-                                    DataValueField="IndividualID" OnSelectedIndexChanged="Individual_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
+                                    DataValueField="IndividualID" AutoPostBack="True"></asp:ListBox>
                             </td>
                             <td style="width: 45%; text-align: left;" valign="middle">
-                                <span class="textEntry">New Individual:</span><br />
+                                <span class="textEntry">New Individual:</span><br /><br />
+                                Name<br />
                                 <asp:TextBox ID="newIndividualName" CssClass="textEntry" Width="250" runat="server"></asp:TextBox>
+                                <br />
+                                Email<br />
+                                <asp:TextBox ID="newIndividualEmail" CssClass="textEntry" Width="250" runat="server"></asp:TextBox>
+
                             </td>
                         </tr>
                         <tr>

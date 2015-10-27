@@ -1,29 +1,31 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/PrimaryTemplate.Master" StylesheetTheme="ThemeA_1024"
-    AutoEventWireup="true" CodeBehind="PACAdministration.aspx.cs" Inherits="WSCIEMP.Admin.PACAdministration" EnableEventValidation="false" Title="PAC Administrator" %>
+    AutoEventWireup="true" CodeBehind="PACAdministration2.aspx.cs" Inherits="WSCIEMP.Admin.PACAdministration2" Title="PAC Administrator" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitleHolder" runat="server">
     PAC Administrator
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentCenter" runat="server">
-    <script type="text/javascript" src="/Script/DataTables/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/Script/DataTables/css/jquery.dataTables.css" />
+    <script type="text/javascript"         src ="/Script/kendo/kendo.web.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Script/kendo/kendo.common.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Script/kendo/kendo.default.min.css" />
 
     <script type="text/javascript">
 
         function showDialog(id) {
-            $('#<%=pacMessages.ClientID%>').html('');
 
-            if (id == 'AddressFinder' || id == 'SignerFinder') {
-                PrepAddressFinder(id);
-                id = "AddressFinder";
+
+            PrepAddressFinder();
+
+            if (id == 'AddressFinder') {
+                $('#<%=pacMessages.ClientID%>').html('');
+                $('#AddressFinder').dialog("option", "title", "Address Finder");
+                $('#<%=hdnAddressFinder.ClientID %>').val('LoadPAC');
             }
             if (id == 'PACIndividuals') {
-                if ($('#<%=lblAddressType.ClientID%>').html().length == 0) {
-                    alert("Please select a valid SHID");
-                    return false;
-                }
+                $('#AddressFinder').dialog("option", "title", "Add a Signer");
+                $('#<%=hdnAddressFinder.ClientID %>').val('AddSigner');
             }
-            $('#' + id).dialog("open");
+            $('#AddressFinder').dialog("open");
         }
 
         function closeDialog(id) {
@@ -34,6 +36,25 @@
             $('#' + id).dialog("close");
         }
 
+
+
+        function updateDataSource(data) {
+            dataSource.read({ data: eval(data) });
+        };
+
+        var dataSource = new kendo.data.DataSource({
+            transport: {
+                read: function (operation) {
+                    var data = operation.data.data || [];
+                    operation.success(data);
+                }
+            },
+            data: [
+                { Order: 1, SHID: 30, Name: 'Wayne Lustberg', Email: 'wlustberg@gmail.com', Percent: 90, Date: '5/1/2015' },
+                { Order: 2, SHID: 30, Name: 'Wayne Lustberg', Email: 'wlustberg@gmail.com', Percent: 90, Date: '5/1/2015' }
+            ]
+        });
+
         function CheckEnterKey(e) {
             var evt = GetEvent(e);
             if ((evt && evt.which && evt.which == 13) || (evt && evt.keyCode && evt.keyCode == 13)) {
@@ -43,7 +64,7 @@
 
         function parseTable() {
             try {
-                var $inputs = $('#<%=indTable.ClientID%> :input');
+                var $inputs = $('#<%=grdIndividuals.ClientID%> :input');
                 var data = '';
                 var shid = '';
 
@@ -91,7 +112,7 @@
             $(element).datepicker('show');
         }
 
-        function PrepAddressFinder(id) {
+        function PrepAddressFinder() {
 
             // clear warning
             $$('addrWarning', $('#AddressFinder')).text('');
@@ -115,8 +136,6 @@
             $$('txtAddrState', $('#AddressFinder')).val('');
             $$('txtAddrZip', $('#AddressFinder')).val('');
             $$('txtAddrPhoneNo', $('#AddressFinder')).val('');
-
-            $('#<%= hdnFinderType.ClientID %>').val(id);
         }
 
         $(document).ready(function () {
@@ -124,16 +143,29 @@
             // Setup Find Address dialog
             //-----------------------------------------
             $('#AddressFinder').dialog({
-                title: "Address Finder", modal: true, autoOpen: false, height: 450, width: 650, draggable: true, resizable: true,
+                title: "Address Finder",
+                modal: true,
+                autoOpen: false,
+                height: 450,
+                width: 650,
+                draggable: true,
+                resizable: true,
                 open: function (type, data) {
                     $(this).parent().appendTo("form");
                 }
             });
+
             //-----------------------------------------
             // Setup Add Individual dialog
             //-----------------------------------------
             $('#PACIndividuals').dialog({
-                title: "Add Individual", modal: true, autoOpen: false, height: 300, width: 650, draggable: true, resizable: true,
+                title: "Add Individual",
+                modal: true,
+                autoOpen: false,
+                height: 300,
+                width: 650,
+                draggable: true,
+                resizable: true,
                 open: function (type, data) {
                     $(this).parent().appendTo("form");
                 }
@@ -151,39 +183,57 @@
                     $(this).parent().appendTo("form");
                 }
             });
-        });
 
-        var dsCurrentStep = 1;
-        $(document).on('click', '#dsInstructionsLink', function () {
-            $('#dsInstructions').dialog('open');
-            return false;
-        }).on('click', '#dsNavLinks a', function () {
-            var path = '/img/docusign/' + $(this).attr('href') + '.png';
-            $('.dsImage').attr('src', path);
-            $('#dsNavLinks a').removeClass('selected');
-            $(this).addClass('selected');
-            return false;
-        }).on('click', '#dsPrev', function () {
-            if (dsCurrentStep > 1) {
-                dsCurrentStep--;
-                $('a[href=' + (dsCurrentStep) + ']').trigger('click');
-            }
-            return false;
-        }).on('click', '#dsNext', function () {
-            if (dsCurrentStep < 9) {
-                dsCurrentStep++;
-                $('a[href=' + (dsCurrentStep) + ']').trigger('click');
-            }
-            return false;
-        });
+            $('#dsInstructionsLink').click(function () {
+                $('#dsInstructions').dialog('open');
+                return false;
+            });
 
+            $('#dsNavLinks a').click(function () {
+                var path = '/img/docusign/' + $(this).attr('href') + '.png';
+                $('.dsImage').attr('src', path);
+                $('#dsNavLinks a').removeClass('selected');
+                $(this).addClass('selected');
+                var dsCurrentStep = $(this).attr('href');
+                return false;
+            });
+            var dsCurrentStep = 1;
+            $('#dsPrev').click(function () {
+                if (dsCurrentStep > 1) {
+                    dsCurrentStep--;
+                    $('a[href=' + (dsCurrentStep) + ']').trigger('click');
+                }
+                return false;
+            });
+            $('#dsNext').click(function () {
+                if (dsCurrentStep < 9) {
+                    dsCurrentStep++;
+                    $('a[href=' + (dsCurrentStep) + ']').trigger('click');
+                }
+                return false;
+            });
+
+            $("#ctl00_ContentCenter_grdIndividuals").kendoGrid({
+                scrollable: true,
+                selectable: true,
+                toolbar: kendo.template($('#grdIndividuals_toolbar').html())
+            });
+
+        });
+    </script>
+
+    <script type="text/x-kendo-template" id="grdIndividuals_toolbar">
+        <div class="toolbar">
+            <button>New Signer</button>
+            <button>Search</button>
+        </div>
     </script>
 
     <style>
         .btnDownload {float: left;}
         #dsInstructionsLink {float: left; display: block; margin-left: 10px;}
         
-        .dsImage                { width: 470px; border: 1px solid #ddd; border-radius: 5px;}
+        .dsImage               { width: 470px; border: 1px solid #ddd; border-radius: 5px;}
         #dsLogo                 { width: 150px}
         .dsNav ol               { font-size: 12px; margin-left:-20px;}
         .dsNav ol li            { margin-top: 15px;  }
@@ -194,22 +244,6 @@
         #dsButtons button       { padding: 4px; }
         #dsLoginLink            { color: Blue; font-weight: bold; font-size:12px; margin-top:15px; }
         #dsNavLinks a.selected  { color: black; cursor: default; text-decoration: none; }
-        
-        
-        #ctl00_ContentCenter_indTable
-        {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-collapse: collapse;}
-        #ctl00_ContentCenter_indTable th {background-color: #eee; text-align: left;}
-        #ctl00_ContentCenter_indTable tr td, 
-        #ctl00_ContentCenter_indTable tr th
-        {
-            padding: 3px 10px;
-            border: 1px solid #ddd;
-            margin: 0px;
-            border-width: 1px 0px 1px;
-        }
     </style>
 
     <div class="DisplayOff" id="actionBlock">
@@ -219,44 +253,46 @@
     
         <asp:ScriptManager ID="mainScriptManager" runat="server"></asp:ScriptManager>
         <br class="halfLine" />
+
+        
         <table border="0" style="width: 98%;" id="selectionCriteria">
             <tr>
                 <td>
                     <asp:UpdatePanel ID="uplShid" UpdateMode="Conditional" ChildrenAsTriggers="true" runat="server">
                         <ContentTemplate>
-                            <div id="pacMessages" style="text-align: center; font-weight: bold; color: Green; font-size: 1.2em;" runat="server"></div>
-                            <table border="0" style="width: 100%;">
-                                <tr>
-                                    <td>
-                                        <span class="LabelText">Crop Year: </span>
-                                    </td>
-                                    <td style="width: 16%">
-                                        <span class="LabelText">Shareholder ID: </span>
-                                    </td>
-                                    <td style="width: 4%">&nbsp;</td>
-                                    <td>
-                                        <span class="LabelText">Business Name: </span>
-                                    </td>
-                                    <td>
-                                        <span class="LabelText">Address Type: </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:DropDownList ID="ddlCropYear" TabIndex="0" runat="server" CssClass="ctlWidth60" OnSelectedIndexChanged="ddlCropYear_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-                                    </td>
-                                    <td colspan="2">
-                                        <asp:TextBox ID="txtSHID" TabIndex="0" runat="server" CssClass="ctlWidth60"></asp:TextBox>&nbsp;&nbsp;
-                                        <input id="btnFindShid" class="LabelText" type="button" onclick="showDialog('AddressFinder');" value="..." />
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblBusName" CssClass="ButtonText" runat="server"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblAddressType" CssClass="ButtonText" runat="server"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
+                    <div id="pacMessages" style="text-align: center; font-weight: bold; color: Green; font-size: 1.2em;" runat="server"></div>
+                    <table border="0" style="width: 100%;">
+                        <tr>
+                            <td>
+                                <span class="LabelText">Crop Year: </span>
+                            </td>
+                            <td style="width: 16%">
+                                <span class="LabelText">Shareholder ID: </span>
+                            </td>
+                            <td style="width: 4%">&nbsp;</td>
+                            <td>
+                                <span class="LabelText">Business Name: </span>
+                            </td>
+                            <td>
+                                <span class="LabelText">Address Type: </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:DropDownList ID="ddlCropYear" TabIndex="0" runat="server" CssClass="ctlWidth60" OnSelectedIndexChanged="ddlCropYear_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                            </td>
+                            <td colspan="2">
+                                <asp:TextBox ID="txtSHID" TabIndex="0" runat="server" CssClass="ctlWidth60"></asp:TextBox>&nbsp;&nbsp;
+                                <input id="btnFindShid" class="LabelText" type="button" onclick="showDialog('AddressFinder');" value="..." />
+                            </td>
+                            <td>
+                                <asp:Label ID="lblBusName" CssClass="ButtonText" runat="server"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblAddressType" CssClass="ButtonText" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                     <br />
@@ -277,17 +313,18 @@
                                 <asp:Table ID="contractTable" runat="server" />
                                 <br />
                                 <asp:HiddenField ID="indTableField" runat="server" />
-                                <asp:Table ID="indTable" runat="server" />
+                                
+                               <asp:Table ID="grdIndividuals" runat="server"></asp:table>
+                                
                                 <div id="PACDetailsActions" runat="server">
                                     <br />
-                                        <div style="text-align: left;">
+                                        <div style="text-align: center;">
                                             <input type="button" id="showInd" class="LabelText" onclick="parseTable(); showDialog('PACIndividuals');" value="Add Signer" />&nbsp;
-                                            <input type="button" id="btnSignerSearch" class="LabelText" onclick="parseTable(); showDialog('SignerFinder');" value="Full Search" />&nbsp;
-
                                         </div>
                                     <br />
                                     <div style="text-align: right; padding-right: 30px;">
-                                        <asp:Button runat="server" ID="btnDownloadPACAgreement" OnClick="btnDownloadPACAgreement_Click" Text="Download PAC Agreement Form" CssClass="btnDownload" />
+                                        
+                                        <asp:Button runat="server" ID="btnDownloadPACAgreement" OnClick="btnDownloadPACAgreement_Click" Text="Download PAC Agreement Form" Visible="false" CssClass="btnDownload" />
                                         <a id="dsInstructionsLink" href="" class="float:left;">DocuSign Instructions</a>
                                         <input type="checkbox" id="pushPAC" name="pushPAC" />Apply to all Contracts
                                         <input type="button" class="LabelText" onclick ="parseTable(); $('#<%=btnSave.ClientID%>').click()" value="Save" />
@@ -337,7 +374,7 @@
             <asp:UpdatePanel ID="uplAddressFinder" UpdateMode="Conditional" ChildrenAsTriggers="true"
                 runat="server">
                 <ContentTemplate>
-                <asp:HiddenField ID="hdnFinderType" runat="server" />
+                     <asp:HiddenField ID="hdnAddressFinder" runat="server" />
                     <br />
                     <div id="addrWarning" class="WarningOff" runat="server">
                     </div>
@@ -370,7 +407,7 @@
                     <br />
                     <table style="width: 600px; border: solid 1px #000000" id="addrResult">
                         <tr>
-                            <td rowspan="10" style="width: 45%; text-align: center; vertical-align: top;">
+                            <td rowspan="9" style="width: 45%; text-align: center; vertical-align: top;">
                                 <span class="addrLabel">Results</span><br />
                                 <asp:ListBox ID="lstAddressName" CssClass="textEntry" Width="250" Height="200" DataTextField="BusName"
                                     DataValueField="SHID" runat="server" OnSelectedIndexChanged="lstAddressName_SelectedIndexChanged"
@@ -456,26 +493,18 @@
                                 <asp:TextBox ID="txtAddrPhoneNo" CssClass="textEntry" Width="120" runat="server"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
-                            <td style="text-align: left;">
-                                <span class="textEntry">Email:</span>
-                            </td>
-                            <td style="text-align: left;" colspan="2">
-                                <asp:TextBox ID="txtEmail" CssClass="textEntry" Width="120" runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
                     </table>
                     <asp:HiddenField ID="txtAddrType" value="" runat="server"></asp:HiddenField>
                     <br />
                     <div style="text-align: right; width: 600px;">
-                        <asp:Button ID="btnAddrOk" OnClick="btnAddrOk_Click" CssClass="btnLabel" runat="server"
-                            Text=" Ok " />&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnAddrOk" OnClick="btnAddrOk_Click" CssClass="btnLabel" runat="server" Text=" Ok " />&nbsp;&nbsp;&nbsp;
                         <input type="button" id="btnAddrCancel" class="btnLabel" value=" Cancel " onclick="closeDialog('AddressFinder')" />
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
         <!-- PAC Individual List -->
+
         <div id='PACIndividuals'>
             <asp:UpdatePanel ID="uplIndividuals" UpdateMode="Conditional" ChildrenAsTriggers="true" runat="server">
                 <ContentTemplate>
@@ -495,13 +524,8 @@
                                     DataValueField="IndividualID" AutoPostBack="True"></asp:ListBox>
                             </td>
                             <td style="width: 45%; text-align: left;" valign="middle">
-                                <span class="textEntry">New Individual:</span><br /><br />
-                                Name<br />
+                                <span class="textEntry">New Individual:</span><br />
                                 <asp:TextBox ID="newIndividualName" CssClass="textEntry" Width="250" runat="server"></asp:TextBox>
-                                <br />
-                                Email<br />
-                                <asp:TextBox ID="newIndividualEmail" CssClass="textEntry" Width="250" runat="server"></asp:TextBox>
-
                             </td>
                         </tr>
                         <tr>

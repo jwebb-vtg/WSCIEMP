@@ -26,7 +26,7 @@
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2575</DevelopmentServerPort>
+          <DevelopmentServerPort>50839</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/WSCIEMP_WAYNE</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

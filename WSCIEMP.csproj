@@ -68,12 +68,146 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\PACAdministration2.aspx" />
     <Content Include="Admin\PACAdministration.aspx" />
     <Content Include="Admin\PassthroughManagement.aspx" />
+    <Content Include="App_Themes\ThemeA_1024\images\Back_WSC.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Back_WSC_Beets.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner001.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner002.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner003.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner004.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner005.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner006.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner007.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner008.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner009.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner010.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner011.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner012.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner013.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner014.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner015.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner016.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner017.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner018.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner019.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner020.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner021.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Banner022.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Field.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Field2.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Sweetner.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Sweetner2.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\Header_WSC_Sweetner3.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\NextGreen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\PrevGreen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\SepWhite.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\images\WaterBack.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx" />
     <Content Include="Downloads\Downloader.aspx" />
+    <Content Include="img\docusign\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\docusign\logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Reports\HReports\BeetPaymentBreakdown.aspx" />
     <Content Include="Reports\MReports\NoticeOfPassthrough.aspx" />
+    <Content Include="Script\Grid.js" />
+    <Content Include="Script\kendo\kendo.web.min.js" />
+    <Content Include="Script\kendo\kendo.common.min.css" />
+    <Content Include="Script\kendo\kendo.default.min.css" />
     <Content Include="SHS\SeedVariety.aspx" />
     <Content Include="BeetAccounting\AccountingFileMtn\DirectDelivery.aspx" />
     <Content Include="Default.aspx" />
@@ -86,6 +220,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\PACAdministration2.aspx.cs">
+      <DependentUpon>PACAdministration2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PACAdministration2.aspx.designer.cs">
+      <DependentUpon>PACAdministration2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PACAdministration.aspx.cs">
       <DependentUpon>PACAdministration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +246,8 @@
     <Compile Include="App_Code\WSCData\Individual.cs" />
     <Compile Include="App_Code\WSCData\PACAgreement.cs" />
     <Compile Include="App_Code\WSCData\PACData.cs" />
+    <Compile Include="App_Code\WSCData\WSCContract.cs" />
+    <Compile Include="App_Code\WSCData\Utils.cs" />
     <Compile Include="App_Code\WSCReports\rptBeetPaymentBreakdown.cs" />
     <Compile Include="App_Code\WSCReports\rptNoticeOfPassthrough.cs" />
     <Compile Include="BeetAccounting\PaymentProcessing\BeetExcessPaymentStation.aspx.cs">
@@ -268,9 +411,15 @@
     <Content Include="Admin\UserFinder.aspx" />
     <Content Include="Admin\UserMaintenance.aspx" />
     <Content Include="App_Themes\NoNavigation\Default.css" />
-    <Content Include="App_Themes\ThemeA_1024\AdRotateMain.xml" />
-    <Content Include="App_Themes\ThemeA_1024\Controls.skin" />
-    <Content Include="App_Themes\ThemeA_1024\Default.css" />
+    <Content Include="App_Themes\ThemeA_1024\AdRotateMain.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\Controls.skin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Themes\ThemeA_1024\Default.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Admin\AdminMain.aspx.cs">
       <DependentUpon>AdminMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -949,10 +1098,18 @@
     <Content Include="BeetAccounting\ShareholderServices\CoopSettings.aspx" />
     <Content Include="BeetAccounting\ShareholderServices\MemberEquityDeduction.aspx" />
     <Content Include="BeetAccounting\ShareholderServices\OverPlantMember.aspx" />
-    <Content Include="img\button-login.jpg" />
-    <Content Include="img\Cal2.gif" />
-    <Content Include="img\calendar.gif" />
-    <Content Include="img\DescFooter.gif" />
+    <Content Include="img\button-login.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Cal2.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\calendar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\DescFooter.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\folders\lm.gif" />
     <Content Include="img\folders\lmh.gif" />
     <Content Include="img\folders\ln.gif" />
@@ -965,10 +1122,18 @@
     <Content Include="img\folders\tp.gif" />
     <Content Include="img\folders\tph.gif" />
     <Content Include="img\folders\vline.gif" />
-    <Content Include="img\Logo2.jpg" />
-    <Content Include="img\NextGreen.gif" />
-    <Content Include="img\PrevGreen.gif" />
-    <Content Include="img\WSCLogo1.jpg" />
+    <Content Include="img\Logo2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\NextGreen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\PrevGreen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\WSCLogo1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Script\MyJQuery.js" />
   </ItemGroup>
   <ItemGroup>
@@ -1027,7 +1192,6 @@
   <ItemGroup>
     <Folder Include="App_Code\WSCData\App_LocalResources\" />
     <Folder Include="App_Themes\NoNavigation\images\" />
-    <Folder Include="App_Themes\ThemeA_1024\images\" />
     <Folder Include="PDF\" />
     <Folder Include="ZHost\" />
   </ItemGroup>
@@ -1078,10 +1242,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Downloads\2015 Non-Shareholder Agreement.doc" />
-    <None Include="Downloads\2015 PAC Corporate PAC dues  for new Corps signing up.doc" />
-    <None Include="Downloads\PACDuesNonCorp.pdf" />
-    <None Include="Downloads\2015 PAC dues form non corporations new one each year.doc" />
-    <None Include="Downloads\PACDuesCorp.pdf" />
+    <Content Include="Downloads\PACDuesNonCorp.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Downloads\PACDuesCorp.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Downloads\2015 Shareholder Agreement.doc" />
     <None Include="Downloads\2015 Temporary Transfer Form Blank.DOC" />
     <None Include="Downloads\83_EquityStatement_1.pdf" />

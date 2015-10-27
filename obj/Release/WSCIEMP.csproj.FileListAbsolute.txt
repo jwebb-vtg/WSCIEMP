@@ -8,3 +8,10 @@ C:\VssWrk\Western\WSCIEMP\obj\Release\ResolveAssemblyReference.cache
 C:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.dll
 C:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.pdb
 D:\VssWrk\Western\WSCIEMP\obj\Release\WSCIEMP.csprojResolveAssemblyReference.cache
+C:\Users\wlustberg\Projects\WSCIEMP\bin\WSCIEMP.dll
+C:\Users\wlustberg\Projects\WSCIEMP\bin\WSCIEMP.pdb
+C:\Users\wlustberg\Projects\WSCIEMP\obj\Release\WSCIEMP.csprojResolveAssemblyReference.cache
+C:\Users\wlustberg\Projects\WSCIEMP\obj\Release\WSCIEMP.dll
+C:\Users\wlustberg\Projects\WSCIEMP\obj\Release\WSCIEMP.pdb
+C:\Users\wlustberg\Projects\WSCIEMP\bin\Downloads\PACDuesNonCorp.pdf
+C:\Users\wlustberg\Projects\WSCIEMP\bin\Downloads\PACDuesCorp.pdf

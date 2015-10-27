@@ -38,7 +38,7 @@ namespace WSCIEMP.Downloads
             stamper.Close();
             pdfReader.Close();
 
-            Response.AddHeader("Content-Disposition", "attachment; filename=YourPDF.pdf");
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + Request.QueryString["Filename"].ToString() + "-" + DateTime.Now.ToString() + ".pdf");
             Response.ContentType = "application/pdf";
             Response.BinaryWrite(output.ToArray());
             Response.End();
